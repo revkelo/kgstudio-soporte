@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soporte de computadores — KG Studio</title>
+<meta name="description" content="Servicio técnico de computadores en Bogotá: mantenimiento, formateo, virus, cambio a SSD y más. Atención remota o con recogida y entrega. Diagnóstico y precio por WhatsApp antes de tocar nada.">
+<link rel="canonical" href="https://pc.kgstudio.top/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pc.kgstudio.top/">
+<meta property="og:title" content="Soporte de computadores — KG Studio">
+<meta property="og:description" content="Dime qué le pasa a tu computador y te digo qué tiene y cuánto vale, sin compromiso.">
+<meta property="og:locale" content="es_CO">
+<meta name="theme-color" content="#0FB5A5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230FB5A5'/%3E%3Ctext x='32' y='43' font-family='ui-monospace,monospace' font-size='27' font-weight='700' fill='white' text-anchor='middle'%3EKG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#sintomas">Ir al diagnóstico</a>
+
+<header class="topbar">
+  <a class="mark" href="/" aria-label="KG Studio Soporte, inicio">
+    <span class="mark__kg">KG</span>
+    <span class="mark__word">Soporte</span>
+  </a>
+  <a class="topbar__cta" data-wa data-msg="Hola Kevin, necesito ayuda con mi computador.">
+    Escribir por WhatsApp
+  </a>
+</header>
+
+<main>
+
+  <!-- ── Hero: la hoja de ingreso ────────────────────────────────── -->
+  <section class="hero" id="sintomas">
+    <p class="hero__eyebrow">Servicio técnico · Bogotá</p>
+    <h1 class="hero__title">¿Qué le pasa a tu computador?</h1>
+    <p class="hero__sub">
+      Elige lo que te está pasando. Armo el mensaje por ti, me lo mandas por WhatsApp
+      y te digo qué tiene y cuánto vale antes de tocar nada.
+    </p>
+
+    <fieldset class="symptoms">
+      <legend class="sr-only">Elige el síntoma de tu equipo</legend>
+      <button type="button" class="chip" data-symptom="va lentísimo y se demora en abrir todo">Va lentísimo</button>
+      <button type="button" class="chip" data-symptom="no enciende">No enciende</button>
+      <button type="button" class="chip" data-symptom="se calienta mucho y el ventilador suena durísimo">Se calienta y suena</button>
+      <button type="button" class="chip" data-symptom="tiene virus: me salen pop-ups y se abren páginas solas">Tiene virus o pop-ups</button>
+      <button type="button" class="chip" data-symptom="se quedó sin espacio en el disco">Se quedó sin espacio</button>
+      <button type="button" class="chip" data-symptom="se reinicia solo y me sale pantalla azul">Pantalla azul</button>
+      <button type="button" class="chip" data-symptom="se le dañó la pantalla, el teclado o la batería">Daño físico</button>
+      <button type="button" class="chip" data-symptom="quiero mejorarlo: ponerle SSD o más memoria">Quiero mejorarlo</button>
+    </fieldset>
+
+    <div class="compose">
+      <p class="compose__label">Tu mensaje</p>
+      <p class="compose__preview" id="preview" aria-live="polite">Hola Kevin, necesito ayuda con mi computador.</p>
+      <a class="btn btn--wa" id="mainCta" data-wa>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.25 8.23Zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.540c.13.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>
+        Escribir por WhatsApp
+      </a>
+      <p class="compose__note">Sin costo por preguntar. Respondo el mismo día.</p>
+    </div>
+  </section>
+
+  <!-- ── Proceso: aquí el orden sí importa ───────────────────────── -->
+  <section class="band">
+    <div class="wrap">
+      <h2 class="h2">Cómo funciona</h2>
+      <ol class="steps">
+        <li class="step">
+          <span class="step__n">01</span>
+          <h3 class="step__title">Me escribes</h3>
+          <p class="step__desc">Me cuentas la falla y, si puedes, me mandas una foto o un video del problema.</p>
+        </li>
+        <li class="step">
+          <span class="step__n">02</span>
+          <h3 class="step__title">Diagnóstico y precio</h3>
+          <p class="step__desc">Reviso el equipo y te digo qué tiene y cuánto cuesta. Si no te sirve, no pasa nada.</p>
+        </li>
+        <li class="step">
+          <span class="step__n">03</span>
+          <h3 class="step__title">Lo reparo</h3>
+          <p class="step__desc">Remoto si es de software, o recojo el equipo si hay que abrirlo o cambiar piezas.</p>
+        </li>
+        <li class="step">
+          <span class="step__n">04</span>
+          <h3 class="step__title">Te lo entrego</h3>
+          <p class="step__desc">Funcionando y con un resumen de lo que se hizo, para que sepas por qué pagaste.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── Servicios ───────────────────────────────────────────────── -->
+  <section class="wrap section">
+    <h2 class="h2">Qué hago</h2>
+
+    <div class="cols">
+      <div class="col">
+        <h3 class="col__title">Software</h3>
+        <p class="col__mode">Casi siempre se resuelve remoto, el mismo día</p>
+        <ul class="list">
+          <li>Eliminación de virus, malware y pop-ups</li>
+          <li>Formateo e instalación de Windows desde cero</li>
+          <li>Optimización de arranque y limpieza de disco</li>
+          <li>Instalación y licenciamiento de programas</li>
+          <li>Configuración de correo, impresoras y red wifi</li>
+          <li>Copia de seguridad de tus archivos</li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3 class="col__title">Hardware</h3>
+        <p class="col__mode">Recojo el equipo y te lo devuelvo listo</p>
+        <ul class="list">
+          <li>Mantenimiento preventivo: limpieza y pasta térmica</li>
+          <li>Cambio de disco duro a SSD (queda volando)</li>
+          <li>Ampliación de memoria RAM</li>
+          <li>Cambio de pantalla, teclado o batería de portátil</li>
+          <li>Diagnóstico de equipos que no encienden</li>
+          <li>Recuperación de datos de discos dañados</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Modalidades ─────────────────────────────────────────────── -->
+  <section class="band">
+    <div class="wrap">
+      <h2 class="h2">Dos formas de atenderte</h2>
+      <div class="modes">
+        <article class="mode">
+          <h3 class="mode__title">Remoto</h3>
+          <p class="mode__desc">
+            Me conecto a tu computador con tu permiso y lo arreglo mientras miras.
+            Sirve para virus, lentitud, programas y configuración. Es lo más rápido y lo más barato.
+          </p>
+          <p class="mode__meta">Necesitas internet y que el equipo encienda</p>
+        </article>
+        <article class="mode">
+          <h3 class="mode__title">Recogida y entrega</h3>
+          <p class="mode__desc">
+            Paso por tu equipo, lo reparo en el taller y te lo llevo de vuelta.
+            Para limpieza, cambio de piezas o cuando el computador no prende.
+          </p>
+          <p class="mode__meta">Bogotá y alrededores</p>
+        </article>
+      </div>
+      <p class="modes__note">
+        Por ahora no atiendo a domicilio: prefiero abrir los equipos en el taller, donde tengo
+        las herramientas y los repuestos.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Quién responde ──────────────────────────────────────────── -->
+  <section class="wrap section">
+    <div class="who">
+      <div class="who__text">
+        <h2 class="h2">Quién te va a responder</h2>
+        <p>
+          Soy <strong>Kevin Gonzalez</strong>, ingeniero de sistemas de la Universidad El Bosque.
+          Trabajo en infraestructura cloud y desarrollo de software, y llevo años reparando y
+          armando equipos. No hay call center: escribes y te contesto yo.
+        </p>
+        <p class="who__link">
+          <a href="https://kgstudio.top" target="_blank" rel="noopener">Ver mi trabajo en kgstudio.top ↗</a>
+        </p>
+      </div>
+      <ul class="who__points">
+        <li>Te digo el precio antes de empezar</li>
+        <li>Tus archivos se respaldan antes de formatear</li>
+        <li>Te explico qué falló, sin tecnicismos</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Preguntas ───────────────────────────────────────────────── -->
+  <section class="wrap section">
+    <h2 class="h2">Preguntas frecuentes</h2>
+    <div class="faq">
+      <details class="qa">
+        <summary>¿Cuánto cuesta?</summary>
+        <p>
+          Depende del equipo y de la falla, así que no pongo una lista de precios que después no se
+          cumpla. Escríbeme, reviso el caso y te doy el valor exacto antes de tocar nada. Preguntar no cuesta.
+        </p>
+      </details>
+      <details class="qa">
+        <summary>¿Pierdo mis archivos?</summary>
+        <p>
+          No. Antes de formatear o cambiar un disco hago una copia de tus documentos, fotos y
+          descargas, y te la entrego junto con el equipo.
+        </p>
+      </details>
+      <details class="qa">
+        <summary>¿Cuánto se demora?</summary>
+        <p>
+          Lo remoto suele quedar el mismo día. Si hay que recoger el equipo, entre uno y tres días
+          según el repuesto. Te aviso el tiempo estimado cuando te paso el precio.
+        </p>
+      </details>
+      <details class="qa">
+        <summary>¿Atienden Mac?</summary>
+        <p>
+          Sí para software, respaldos y configuración. Para cambio de piezas trabajo sobre todo
+          equipos Windows: si es un Mac, escríbeme y te digo de una si puedo o no.
+        </p>
+      </details>
+      <details class="qa">
+        <summary>¿Dan garantía?</summary>
+        <p>
+          Sí. La mano de obra queda garantizada 30 días, y los repuestos con la garantía del
+          fabricante. Si el equipo vuelve por lo mismo, lo reviso sin cobrar.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ── Cierre ──────────────────────────────────────────────────── -->
+  <section class="close">
+    <div class="wrap">
+      <h2 class="close__title">Cuéntame qué le pasa</h2>
+      <p class="close__sub">Te respondo el mismo día y te digo qué tiene antes de cobrarte nada.</p>
+      <a class="btn btn--wa" data-wa data-msg="Hola Kevin, necesito ayuda con mi computador.">
+        Escribir por WhatsApp
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <p>KG Studio · Bogotá, Colombia</p>
+    <p><a href="https://kgstudio.top" target="_blank" rel="noopener">kgstudio.top</a></p>
+  </div>
+</footer>
+
+<a class="float" data-wa data-msg="Hola Kevin, necesito ayuda con mi computador." aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.52 11.98c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.13.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>
+</a>
+
+<script src="main.js" defer></script>
+</body>
+</html>
