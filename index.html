@@ -1,249 +1,267 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Soporte de computadores — KG Studio</title>
-<meta name="description" content="Servicio técnico de computadores en Bogotá: mantenimiento, formateo, virus, cambio a SSD y más. Atención remota o con recogida y entrega. Diagnóstico y precio por WhatsApp antes de tocar nada.">
-<link rel="canonical" href="https://pc.kgstudio.top/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reinicia · Mantenimiento de computadores en tu conjunto</title>
+<meta name="description" content="Mantenimiento de computadores hecho por un ingeniero de sistemas, aquí mismo en el conjunto. Limpieza, pasta térmica y optimización desde $30.000, con garantía de 8 días.">
+<link rel="canonical" href="https://reinicia.kgstudio.top/">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://pc.kgstudio.top/">
-<meta property="og:title" content="Soporte de computadores — KG Studio">
-<meta property="og:description" content="Dime qué le pasa a tu computador y te digo qué tiene y cuánto vale, sin compromiso.">
+<meta property="og:url" content="https://reinicia.kgstudio.top/">
+<meta property="og:title" content="Reinicia · Tu computador rápido y fresco otra vez">
+<meta property="og:description" content="Mantenimiento de computadores en tu propio conjunto. Bajas tu equipo, te lo devuelvo volando.">
 <meta property="og:locale" content="es_CO">
-<meta name="theme-color" content="#0FB5A5">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230FB5A5'/%3E%3Ctext x='32' y='43' font-family='ui-monospace,monospace' font-size='27' font-weight='700' fill='white' text-anchor='middle'%3EKG%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#12B8A6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='26' fill='%230E1A22'/%3E%3Cg fill='none' stroke='%2312B8A6' stroke-width='11' stroke-linecap='round'%3E%3Cpath d='M71.6 28.1 A34 34 0 1 1 48.4 28.1'/%3E%3Cline x1='60' y1='20' x2='60' y2='54'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Reinicia",
+  "description": "Mantenimiento de computadores a domicilio dentro del conjunto residencial.",
+  "url": "https://reinicia.kgstudio.top",
+  "areaServed": { "@type": "City", "name": "Bogotá" },
+  "priceRange": "$30.000 - $60.000 COP",
+  "founder": { "@type": "Person", "name": "Kevin Gonzalez", "url": "https://kgstudio.top" }
+}
+</script>
 </head>
 <body>
 
-<a class="skip" href="#sintomas">Ir al diagnóstico</a>
+<a class="skip" href="#servicios">Ir a los servicios</a>
 
-<header class="topbar">
-  <a class="mark" href="/" aria-label="KG Studio Soporte, inicio">
-    <span class="mark__kg">KG</span>
-    <span class="mark__word">Soporte</span>
-  </a>
-  <a class="topbar__cta" data-wa data-msg="Hola Kevin, necesito ayuda con mi computador.">
-    Escribir por WhatsApp
-  </a>
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/">
+      <svg class="logo-mark" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="#12B8A6" stroke-width="11" stroke-linecap="round"><path d="M71.6 28.1 A34 34 0 1 1 48.4 28.1"/><line x1="60" y1="20" x2="60" y2="54"/></g></svg>
+      <span class="brand-text">Reinicia<small>Mantenimiento de PC</small></span>
+    </a>
+    <a class="nav-cta" data-wa data-msg="Hola Kevin, quiero agendar un mantenimiento de mi computador.">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.37-.15-.2-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.15.12.32.02.51-.09.2-.14.32-.27.49-.14.17-.29.37-.41.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.61-.13.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
 </header>
 
 <main>
 
-  <!-- ── Hero: la hoja de ingreso ────────────────────────────────── -->
-  <section class="hero" id="sintomas">
-    <p class="hero__eyebrow">Servicio técnico · Bogotá</p>
-    <h1 class="hero__title">¿Qué le pasa a tu computador?</h1>
-    <p class="hero__sub">
-      Elige lo que te está pasando. Armo el mensaje por ti, me lo mandas por WhatsApp
-      y te digo qué tiene y cuánto vale antes de tocar nada.
-    </p>
-
-    <fieldset class="symptoms">
-      <legend class="sr-only">Elige el síntoma de tu equipo</legend>
-      <button type="button" class="chip" data-symptom="va lentísimo y se demora en abrir todo">Va lentísimo</button>
-      <button type="button" class="chip" data-symptom="no enciende">No enciende</button>
-      <button type="button" class="chip" data-symptom="se calienta mucho y el ventilador suena durísimo">Se calienta y suena</button>
-      <button type="button" class="chip" data-symptom="tiene virus: me salen pop-ups y se abren páginas solas">Tiene virus o pop-ups</button>
-      <button type="button" class="chip" data-symptom="se quedó sin espacio en el disco">Se quedó sin espacio</button>
-      <button type="button" class="chip" data-symptom="se reinicia solo y me sale pantalla azul">Pantalla azul</button>
-      <button type="button" class="chip" data-symptom="se le dañó la pantalla, el teclado o la batería">Daño físico</button>
-      <button type="button" class="chip" data-symptom="quiero mejorarlo: ponerle SSD o más memoria">Quiero mejorarlo</button>
-    </fieldset>
-
-    <div class="compose">
-      <p class="compose__label">Tu mensaje</p>
-      <p class="compose__preview" id="preview" aria-live="polite">Hola Kevin, necesito ayuda con mi computador.</p>
-      <a class="btn btn--wa" id="mainCta" data-wa>
-        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.25 8.23Zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.540c.13.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>
-        Escribir por WhatsApp
-      </a>
-      <p class="compose__note">Sin costo por preguntar. Respondo el mismo día.</p>
-    </div>
-  </section>
-
-  <!-- ── Proceso: aquí el orden sí importa ───────────────────────── -->
-  <section class="band">
-    <div class="wrap">
-      <h2 class="h2">Cómo funciona</h2>
-      <ol class="steps">
-        <li class="step">
-          <span class="step__n">01</span>
-          <h3 class="step__title">Me escribes</h3>
-          <p class="step__desc">Me cuentas la falla y, si puedes, me mandas una foto o un video del problema.</p>
-        </li>
-        <li class="step">
-          <span class="step__n">02</span>
-          <h3 class="step__title">Diagnóstico y precio</h3>
-          <p class="step__desc">Reviso el equipo y te digo qué tiene y cuánto cuesta. Si no te sirve, no pasa nada.</p>
-        </li>
-        <li class="step">
-          <span class="step__n">03</span>
-          <h3 class="step__title">Lo reparo</h3>
-          <p class="step__desc">Remoto si es de software, o recojo el equipo si hay que abrirlo o cambiar piezas.</p>
-        </li>
-        <li class="step">
-          <span class="step__n">04</span>
-          <h3 class="step__title">Te lo entrego</h3>
-          <p class="step__desc">Funcionando y con un resumen de lo que se hizo, para que sepas por qué pagaste.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ── Servicios ───────────────────────────────────────────────── -->
-  <section class="wrap section">
-    <h2 class="h2">Qué hago</h2>
-
-    <div class="cols">
-      <div class="col">
-        <h3 class="col__title">Software</h3>
-        <p class="col__mode">Casi siempre se resuelve remoto, el mismo día</p>
-        <ul class="list">
-          <li>Eliminación de virus, malware y pop-ups</li>
-          <li>Formateo e instalación de Windows desde cero</li>
-          <li>Optimización de arranque y limpieza de disco</li>
-          <li>Instalación y licenciamiento de programas</li>
-          <li>Configuración de correo, impresoras y red wifi</li>
-          <li>Copia de seguridad de tus archivos</li>
-        </ul>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Mantenimiento en tu propio conjunto</span>
+      <h1>Tu computador<br>rápido y <span class="cool">fresco</span> otra vez.</h1>
+      <p class="lead">Limpieza interna, cambio de pasta térmica y optimización, hechos por un ingeniero de sistemas — sin que tu equipo salga a ningún lado.</p>
+      <p class="sig">Bajas tu equipo, te lo devuelvo volando.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" data-wa data-msg="Hola Kevin, quiero agendar un mantenimiento de mi computador.">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.37-.15-.2-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.15.12.32.02.51-.09.2-.14.32-.27.49-.14.17-.29.37-.41.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.61-.13.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
+          Escríbeme por WhatsApp
+        </a>
+        <a class="btn-ghost" href="#jornada">Ver la jornada del mes</a>
       </div>
-
-      <div class="col">
-        <h3 class="col__title">Hardware</h3>
-        <p class="col__mode">Recojo el equipo y te lo devuelvo listo</p>
-        <ul class="list">
-          <li>Mantenimiento preventivo: limpieza y pasta térmica</li>
-          <li>Cambio de disco duro a SSD (queda volando)</li>
-          <li>Ampliación de memoria RAM</li>
-          <li>Cambio de pantalla, teclado o batería de portátil</li>
-          <li>Diagnóstico de equipos que no encienden</li>
-          <li>Recuperación de datos de discos dañados</li>
-        </ul>
+      <div class="hero-tags">
+        <span>Aquí en el conjunto</span>
+        <span>Garantía de 8 días</span>
+        <span>Tu info intacta</span>
       </div>
     </div>
-  </section>
 
-  <!-- ── Modalidades ─────────────────────────────────────────────── -->
-  <section class="band">
-    <div class="wrap">
-      <h2 class="h2">Dos formas de atenderte</h2>
-      <div class="modes">
-        <article class="mode">
-          <h3 class="mode__title">Remoto</h3>
-          <p class="mode__desc">
-            Me conecto a tu computador con tu permiso y lo arreglo mientras miras.
-            Sirve para virus, lentitud, programas y configuración. Es lo más rápido y lo más barato.
-          </p>
-          <p class="mode__meta">Necesitas internet y que el equipo encienda</p>
-        </article>
-        <article class="mode">
-          <h3 class="mode__title">Recogida y entrega</h3>
-          <p class="mode__desc">
-            Paso por tu equipo, lo reparo en el taller y te lo llevo de vuelta.
-            Para limpieza, cambio de piezas o cuando el computador no prende.
-          </p>
-          <p class="mode__meta">Bogotá y alrededores</p>
-        </article>
+    <!-- FIRMA: tarjeta de diagnóstico -->
+    <div class="diag" id="diag">
+      <div class="diag-top">
+        <div>
+          <div class="diag-title"><span class="pulse" aria-hidden="true"></span>Diagnóstico del equipo</div>
+          <div class="diag-sub" id="diagSub">Después del mantenimiento</div>
+        </div>
+        <div class="toggle" role="group" aria-label="Ver antes o después del mantenimiento">
+          <button type="button" id="btnAntes" aria-pressed="false">Antes</button>
+          <button type="button" id="btnDespues" class="on" aria-pressed="true">Después</button>
+        </div>
       </div>
-      <p class="modes__note">
-        Por ahora no atiendo a domicilio: prefiero abrir los equipos en el taller, donde tengo
-        las herramientas y los repuestos.
-      </p>
-    </div>
-  </section>
 
-  <!-- ── Quién responde ──────────────────────────────────────────── -->
-  <section class="wrap section">
-    <div class="who">
-      <div class="who__text">
-        <h2 class="h2">Quién te va a responder</h2>
-        <p>
-          Soy <strong>Kevin Gonzalez</strong>, ingeniero de sistemas de la Universidad El Bosque.
-          Trabajo en infraestructura cloud y desarrollo de software, y llevo años reparando y
-          armando equipos. No hay call center: escribes y te contesto yo.
-        </p>
-        <p class="who__link">
-          <a href="https://kgstudio.top" target="_blank" rel="noopener">Ver mi trabajo en kgstudio.top ↗</a>
-        </p>
+      <div class="diag-rows">
+        <div class="row">
+          <div class="row-head"><span class="row-label">Temperatura CPU</span><span class="row-val cool" id="vTemp">54°C</span></div>
+          <div class="meter"><i id="mTemp"></i></div>
+        </div>
+        <div class="row">
+          <div class="row-head"><span class="row-label">Tiempo de arranque</span><span class="row-val cool" id="vBoot">24 s</span></div>
+          <div class="meter"><i id="mBoot"></i></div>
+        </div>
+        <div class="row">
+          <div class="row-head"><span class="row-label">Espacio liberado</span><span class="row-val cool" id="vDisk">18.3 GB</span></div>
+          <div class="meter"><i id="mDisk"></i></div>
+        </div>
       </div>
-      <ul class="who__points">
-        <li>Te digo el precio antes de empezar</li>
-        <li>Tus archivos se respaldan antes de formatear</li>
-        <li>Te explico qué falló, sin tecnicismos</li>
-      </ul>
-    </div>
-  </section>
 
-  <!-- ── Preguntas ───────────────────────────────────────────────── -->
-  <section class="wrap section">
-    <h2 class="h2">Preguntas frecuentes</h2>
-    <div class="faq">
-      <details class="qa">
-        <summary>¿Cuánto cuesta?</summary>
-        <p>
-          Depende del equipo y de la falla, así que no pongo una lista de precios que después no se
-          cumpla. Escríbeme, reviso el caso y te doy el valor exacto antes de tocar nada. Preguntar no cuesta.
-        </p>
-      </details>
-      <details class="qa">
-        <summary>¿Pierdo mis archivos?</summary>
-        <p>
-          No. Antes de formatear o cambiar un disco hago una copia de tus documentos, fotos y
-          descargas, y te la entrego junto con el equipo.
-        </p>
-      </details>
-      <details class="qa">
-        <summary>¿Cuánto se demora?</summary>
-        <p>
-          Lo remoto suele quedar el mismo día. Si hay que recoger el equipo, entre uno y tres días
-          según el repuesto. Te aviso el tiempo estimado cuando te paso el precio.
-        </p>
-      </details>
-      <details class="qa">
-        <summary>¿Atienden Mac?</summary>
-        <p>
-          Sí para software, respaldos y configuración. Para cambio de piezas trabajo sobre todo
-          equipos Windows: si es un Mac, escríbeme y te digo de una si puedo o no.
-        </p>
-      </details>
-      <details class="qa">
-        <summary>¿Dan garantía?</summary>
-        <p>
-          Sí. La mano de obra queda garantizada 30 días, y los repuestos con la garantía del
-          fabricante. Si el equipo vuelve por lo mismo, lo reviso sin cobrar.
-        </p>
-      </details>
-    </div>
-  </section>
+      <div class="diag-status" id="status">
+        <div class="ico" id="statusIco">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <div><b id="statusTitle">Fresco y veloz</b><span id="statusSub">Listo para usar</span></div>
+      </div>
 
-  <!-- ── Cierre ──────────────────────────────────────────────────── -->
-  <section class="close">
-    <div class="wrap">
-      <h2 class="close__title">Cuéntame qué le pasa</h2>
-      <p class="close__sub">Te respondo el mismo día y te digo qué tiene antes de cobrarte nada.</p>
-      <a class="btn btn--wa" data-wa data-msg="Hola Kevin, necesito ayuda con mi computador.">
-        Escribir por WhatsApp
-      </a>
+      <p class="diag-foot">Cifras de ejemplo de un equipo típico. Las tuyas te las mido y te las muestro.</p>
     </div>
-  </section>
+
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Servicios</span>
+      <h2>Un servicio claro, con precio de una vez.</h2>
+      <p>Sin sorpresas. Escoges lo que necesitas y sabes cuánto vale desde el primer mensaje.</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M2 20h20"/></svg></div>
+        <h3>Portátil</h3>
+        <p>Desarme, limpieza interna, cambio de pasta térmica, limpieza de software, drivers y optimización de arranque.</p>
+        <div class="price"><span class="from">Desde</span><span class="amt">$60.000</span></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="3" width="9" height="18" rx="1.5"/><path d="M17 7h3v10h-3M7 7h2M7 11h2"/></svg></div>
+        <h3>Torre / Escritorio</h3>
+        <p>Limpieza interna a fondo, pasta térmica, revisión de ventiladores, limpieza de software y optimización.</p>
+        <div class="price"><span class="from">Desde</span><span class="amt">$50.000</span></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+        <h3>Solo software</h3>
+        <p>Sin abrir el equipo: limpieza lógica, quitar basura, optimización de arranque, actualizaciones y antivirus.</p>
+        <div class="price"><span class="from">Desde</span><span class="amt">$30.000</span></div>
+      </div>
+
+    </div>
+    <p class="price-note reveal">Todo incluye un chequeo de salud (disco, batería y temperaturas) con recomendaciones. Descuento del 15% desde el segundo equipo de la misma casa o por vecino referido.</p>
+  </div>
+</section>
+
+<!-- QUÉ INCLUYE -->
+<section id="incluye">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Qué incluye</span>
+      <h2>Todo esto, en cada mantenimiento.</h2>
+      <p>Para que sepas exactamente qué le van a hacer a tu equipo antes de entregarlo.</p>
+    </div>
+    <ul class="checks">
+      <li class="reveal"><b>Limpieza interna</b><span>Ventiladores, disipador y tarjeta, con aire y herramienta antiestática.</span></li>
+      <li class="reveal"><b>Pasta térmica nueva</b><span>Se retira la vieja y se aplica pasta fresca. Es lo que baja la temperatura de verdad.</span></li>
+      <li class="reveal"><b>Limpieza de software</b><span>Programas basura, arranque automático y archivos temporales fuera.</span></li>
+      <li class="reveal"><b>Actualizaciones y drivers</b><span>Windows y controladores al día, que es la mitad de la lentitud.</span></li>
+      <li class="reveal"><b>Chequeo de salud</b><span>Estado del disco, la batería y las temperaturas, con lo que te recomiendo hacer.</span></li>
+      <li class="reveal"><b>Informe al entregar</b><span>Te cuento qué encontré y qué hice, sin tecnicismos.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2>Cuatro pasos, todo dentro del conjunto.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">01</div><h4>Me escribes</h4><p>Un mensaje por WhatsApp con lo que necesitas y coordinamos la hora.</p></div>
+      <div class="step reveal"><div class="num">02</div><h4>Bajas el equipo</h4><p>Lo traes a mi apartamento o subo yo — como te quede mejor.</p></div>
+      <div class="step reveal"><div class="num">03</div><h4>Mantenimiento</h4><p>Limpieza, pasta térmica y optimización. Entre 40 y 60 minutos.</p></div>
+      <div class="step reveal"><div class="num">04</div><h4>Te lo entrego</h4><p>Encendido, funcionando y volando. Pagas al recibirlo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- JORNADA -->
+<section id="jornada">
+  <div class="wrap reveal">
+    <div class="jornada-wrap">
+      <div class="jornada-inner">
+        <div class="txt">
+          <span class="eyebrow">Jornada del mes</span>
+          <h2>Un sábado al mes, precio especial.</h2>
+          <p>Concentro varios equipos del conjunto en un solo día con tarifa de jornada. Cupos por turno para atender a cada vecino bien. Escríbeme y te aparto la hora.</p>
+          <div class="jornada-prices">
+            <div class="jchip"><div class="l">Portátil</div><div class="v"><s>$60.000</s>$55.000</div></div>
+            <div class="jchip"><div class="l">Torre</div><div class="v"><s>$50.000</s>$45.000</div></div>
+          </div>
+        </div>
+        <a class="btn-primary" data-wa data-msg="Hola Kevin, quiero apartar un turno para la jornada del mes.">Apartar mi turno</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIANZA -->
+<section id="confianza">
+  <div class="wrap trust-grid">
+    <div class="reveal">
+      <div class="sec-head trust-head">
+        <span class="eyebrow">Por qué conmigo</span>
+        <h2>Un vecino que sabe de esto.</h2>
+      </div>
+      <div class="trust-list">
+        <div class="trust-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></div><div><b>Ingeniero de sistemas</b><span>No es un curso de YouTube: es mi profesión.</span></div></div>
+        <div class="trust-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9 20v-6h6v6"/></svg></div><div><b>Aquí en el conjunto</b><span>Tu equipo nunca sale del edificio. Cero riesgo, cero transporte.</span></div></div>
+        <div class="trust-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><b>Garantía de 8 días</b><span>Si algo del mantenimiento falla, lo reviso sin costo.</span></div></div>
+        <div class="trust-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div><div><b>Tu información intacta</b><span>Cuido tus archivos. Nada se pierde en el proceso.</span></div></div>
+      </div>
+    </div>
+    <div class="signoff reveal">
+      <div class="who">
+        <div class="av">K</div>
+        <div><b>Kevin Gonzalez</b><span>@kagonzalezdev</span></div>
+      </div>
+      <q>Vivo aquí mismo, en la torre [X]. Trabajo con computadores todos los días y quería ofrecerles a los vecinos un servicio serio, cercano y sin vueltas. Tu equipo queda como nuevo y tú ni tienes que salir.</q>
+      <p class="signoff-link"><a href="https://kgstudio.top" target="_blank" rel="noopener">Ver mi trabajo en kgstudio.top ↗</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final" id="contacto">
+  <div class="wrap reveal">
+    <span class="eyebrow">Agenda tu mantenimiento</span>
+    <h2>¿Tu computador anda <span class="cool">lento</span>?<br>Yo estoy a un mensaje.</h2>
+    <p>Escríbeme por WhatsApp y coordinamos. Aquí mismo, en el conjunto.</p>
+    <a class="btn-primary btn-lg" data-wa data-msg="Hola Kevin, quiero agendar un mantenimiento de mi computador.">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.37-.15-.2-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.15.12.32.02.51-.09.2-.14.32-.27.49-.14.17-.29.37-.41.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.61-.13.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
+      Escribir por WhatsApp
+    </a>
+  </div>
+</section>
 
 </main>
 
-<footer class="foot">
-  <div class="wrap foot__inner">
-    <p>KG Studio · Bogotá, Colombia</p>
-    <p><a href="https://kgstudio.top" target="_blank" rel="noopener">kgstudio.top</a></p>
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-inner">
+    <div class="brand">
+      <svg class="logo-mark" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="#12B8A6" stroke-width="11" stroke-linecap="round"><path d="M71.6 28.1 A34 34 0 1 1 48.4 28.1"/><line x1="60" y1="20" x2="60" y2="54"/></g></svg>
+      <span class="brand-text">Reinicia<small>Mantenimiento de PC</small></span>
+    </div>
+    <div class="foot-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#incluye">Qué incluye</a>
+      <a href="#jornada">Jornada</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="foot-by">reinicia.kgstudio.top · un servicio de <a href="https://kgstudio.top" target="_blank" rel="noopener">Kevin Gonzalez · @kagonzalezdev</a> — para los vecinos del conjunto.</div>
   </div>
 </footer>
-
-<a class="float" data-wa data-msg="Hola Kevin, necesito ayuda con mi computador." aria-label="Escribir por WhatsApp">
-  <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.52 11.98c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.13.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.52.59.19 1.12.16 1.54.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>
-</a>
 
 <script src="main.js" defer></script>
 </body>

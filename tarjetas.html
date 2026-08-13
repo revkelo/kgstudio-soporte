@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reinicia · Tarjetas de presentación</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='26' fill='%230E1A22'/%3E%3Cg fill='none' stroke='%2312B8A6' stroke-width='11' stroke-linecap='round'%3E%3Cpath d='M71.6 28.1 A34 34 0 1 1 48.4 28.1'/%3E%3Cline x1='60' y1='20' x2='60' y2='54'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  :root{
+    --ink:#0E1A22; --surface:#FFFFFF; --bg:#EDF1F3;
+    --teal:#12B8A6; --teal-deep:#0A8C7C; --teal-wash:#DFF4F1;
+    --muted:#64757F; --line:#D8E0E4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#C9D2D7;font-family:'Hanken Grotesk',sans-serif;color:var(--ink);padding:34px 16px 60px}
+
+  /* ---- barra de control, solo en pantalla ---- */
+  .toolbar{max-width:520px;margin:0 auto 28px;text-align:center}
+  .toolbar h1{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.5rem;letter-spacing:-.02em;margin-bottom:6px}
+  .toolbar p{color:#3b4a52;font-size:.9rem;margin-bottom:16px}
+  .toolbar button{
+    font-family:'Hanken Grotesk';font-weight:700;font-size:.95rem;cursor:pointer;
+    background:var(--ink);color:#fff;border:0;border-radius:999px;padding:12px 26px;
+  }
+  .toolbar button:hover{background:var(--teal-deep)}
+  .hint{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#42525a;margin-top:14px;line-height:1.6}
+
+  .stage{display:flex;flex-direction:column;align-items:center;gap:26px}
+  .label{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#3b4a52;margin-bottom:8px;text-align:center}
+
+  /* ---- tarjeta base: 90 x 55 mm ---- */
+  .card{
+    width:90mm;height:55mm;overflow:hidden;position:relative;
+    box-shadow:0 10px 30px -12px rgba(0,0,0,.4);
+  }
+  .guide{outline:1px dashed rgba(18,184,166,.55);outline-offset:3px}
+
+  /* ---- frente ---- */
+  .front{background:var(--ink);color:#EAF1F2;padding:6mm 6.5mm;display:flex;flex-direction:column;justify-content:space-between}
+  .front-top{display:flex;align-items:center;gap:3mm}
+  .logo{width:11mm;height:11mm;flex:none}
+  .wordmark{font-family:'Bricolage Grotesque';font-weight:800;font-size:20pt;letter-spacing:-.01em;line-height:1;color:#fff}
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:6pt;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-top:1.4mm}
+  .tagline{font-family:'Bricolage Grotesque';font-weight:600;font-size:11.5pt;line-height:1.15;max-width:60mm;color:#DCE7E9}
+  .front-bottom{display:flex;align-items:center;gap:3mm}
+  .front-bottom .bar{width:6mm;height:.9mm;background:var(--teal);border-radius:2px}
+  .front-bottom b{font-family:'Bricolage Grotesque';font-weight:700;font-size:9.5pt;display:block;line-height:1.1}
+  .front-bottom span{font-family:'JetBrains Mono',monospace;font-size:6.2pt;color:#8FA6AB;letter-spacing:.04em}
+
+  /* ---- reverso ---- */
+  .back{background:var(--surface);padding:5mm 5.5mm;display:grid;grid-template-columns:1fr 26mm;gap:4mm}
+  .back-left{display:flex;flex-direction:column;justify-content:space-between}
+  .back-brand{display:flex;align-items:center;gap:2mm}
+  .back-brand .logo{width:6.5mm;height:6.5mm}
+  .back-brand .n{font-family:'Bricolage Grotesque';font-weight:800;font-size:12pt;letter-spacing:-.01em}
+  .svc{margin-top:1mm}
+  .svc-row{display:flex;align-items:baseline;justify-content:space-between;gap:2mm;padding:1.1mm 0;border-bottom:.3pt dotted var(--line)}
+  .svc-row .s{font-size:7.6pt;font-weight:600;color:var(--ink)}
+  .svc-row .p{font-family:'JetBrains Mono',monospace;font-size:7.6pt;font-weight:700;color:var(--teal-deep);white-space:nowrap}
+  .badges{display:flex;gap:1.6mm;flex-wrap:wrap;margin-top:1mm}
+  .badge{font-family:'JetBrains Mono',monospace;font-size:5.6pt;letter-spacing:.03em;text-transform:uppercase;background:var(--teal-wash);color:var(--teal-deep);padding:1mm 2mm;border-radius:2mm;font-weight:500}
+
+  .back-right{display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center}
+  .qr{width:24mm;height:24mm;background:#fff;border:.4pt solid var(--line);border-radius:2mm;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .qr img,.qr canvas{width:22mm!important;height:22mm!important}
+  .qr .ph{font-family:'JetBrains Mono',monospace;font-size:5.4pt;color:var(--muted);padding:2mm;text-align:center}
+  .contact{margin-top:1.6mm}
+  .contact .wa{display:flex;align-items:center;gap:1.2mm;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:7.4pt;color:var(--ink)}
+  .contact .wa svg{width:3mm;height:3mm;fill:var(--teal-deep)}
+  .contact .url{font-family:'JetBrains Mono',monospace;font-size:6.2pt;color:var(--teal-deep);margin-top:.8mm}
+  .contact .h{font-family:'JetBrains Mono',monospace;font-size:6pt;color:var(--muted);margin-top:.4mm}
+
+  /* ---- impresión ---- */
+  @page{size:90mm 55mm;margin:0}
+  @media print{
+    body{background:#fff;padding:0}
+    .toolbar,.label{display:none!important}
+    .stage{gap:0}
+    .card{box-shadow:none;outline:none!important;page-break-after:always;break-after:page}
+    .card:last-child{page-break-after:auto}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <h1>Tarjetas · Reinicia</h1>
+  <p>Frente y reverso a tamaño real (90 × 55 mm). Imprime a doble cara o guárdalas en PDF para llevar a la litografía.</p>
+  <button onclick="window.print()">Imprimir / Guardar PDF</button>
+  <div class="hint">
+    Falta por completar: <b>WhatsApp</b>, <b>número de torre</b>.<br>
+    El número se edita en una sola línea al final de este archivo.<br>
+    Para litografía: exporta a PDF y pide 3 mm de sangrado.
+  </div>
+</div>
+
+<div class="stage">
+
+  <!-- FRENTE -->
+  <div>
+    <div class="label">Frente</div>
+    <div class="card front guide">
+      <div class="front-top">
+        <svg class="logo" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="#12B8A6" stroke-width="11" stroke-linecap="round"><path d="M71.6 28.1 A34 34 0 1 1 48.4 28.1"/><line x1="60" y1="20" x2="60" y2="54"/></g></svg>
+        <div>
+          <div class="wordmark">Reinicia</div>
+          <div class="kicker">Mantenimiento de PC</div>
+        </div>
+      </div>
+      <div class="tagline">Tu computador rápido y fresco otra vez.</div>
+      <div class="front-bottom">
+        <div class="bar"></div>
+        <div>
+          <b>Kevin Gonzalez</b>
+          <span>Ingeniero de sistemas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVERSO -->
+  <div>
+    <div class="label">Reverso</div>
+    <div class="card back guide">
+      <div class="back-left">
+        <div class="back-brand">
+          <svg class="logo" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="#12B8A6" stroke-width="11" stroke-linecap="round"><path d="M71.6 28.1 A34 34 0 1 1 48.4 28.1"/><line x1="60" y1="20" x2="60" y2="54"/></g></svg>
+          <div class="n">Reinicia</div>
+        </div>
+        <div class="svc">
+          <div class="svc-row"><span class="s">Mantenimiento portátil</span><span class="p">$60.000</span></div>
+          <div class="svc-row"><span class="s">Torre / escritorio</span><span class="p">$50.000</span></div>
+          <div class="svc-row"><span class="s">Solo software</span><span class="p">$30.000</span></div>
+        </div>
+        <div class="badges">
+          <span class="badge">Aquí en tu conjunto</span>
+          <span class="badge">Garantía 8 días</span>
+        </div>
+      </div>
+
+      <div class="back-right">
+        <div class="qr" id="qr"><span class="ph">QR a tu WhatsApp</span></div>
+        <div class="contact">
+          <div class="wa" id="waText">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2z"/></svg>
+            <span id="waNumber">300 000 0000</span>
+          </div>
+          <div class="url">reinicia.kgstudio.top</div>
+          <div class="h">@kagonzalezdev</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // === EDITA AQUÍ tu número (con indicativo, sin signos) ===
+  var WHATSAPP = "57XXXXXXXXXX";
+
+  // Muestra el número en formato legible: 300 123 4567
+  var local = WHATSAPP.replace(/^57/, "");
+  if (/^\d{10}$/.test(local)) {
+    document.getElementById("waNumber").textContent =
+      local.slice(0, 3) + " " + local.slice(3, 6) + " " + local.slice(6);
+  }
+
+  try {
+    new QRCode(document.getElementById("qr"), {
+      text: "https://wa.me/" + WHATSAPP + "?text=Hola%20Kevin,%20quiero%20un%20mantenimiento",
+      width: 208, height: 208,
+      colorDark: "#0E1A22", colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  } catch (e) {
+    // Sin internet para cargar la librería queda el marco con la nota.
+  }
+</script>
+</body>
+</html>

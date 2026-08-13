@@ -1,50 +1,67 @@
-# KG Studio Soporte
+# Reinicia
 
-Landing del servicio técnico de computadores: <https://pc.kgstudio.top>
+Mantenimiento de computadores para los vecinos del conjunto.
+<https://reinicia.kgstudio.top> (también responde en `pc.kgstudio.top`).
 
-Sitio estático puro (HTML + CSS + JS, sin build) desplegado en Vercel. Cada push a `main`
-publica en producción.
+Sitio estático puro (HTML + CSS + JS, sin build) desplegado en Vercel. Cada push a
+`main` publica en producción.
 
-## Cambiar el número de WhatsApp
+## Pendientes antes de repartir tarjetas
 
-Está en una sola constante, al inicio de `main.js`:
+| Dato | Dónde |
+| --- | --- |
+| Número de WhatsApp | `main.js` línea 8 y `tarjetas.html` (al final) |
+| Número de torre | `index.html`, en la cita de la sección Confianza (`torre [X]`) |
 
 ```js
 const WHATSAPP = '57XXXXXXXXXX';
 ```
 
-Formato internacional, sin `+`, espacios ni guiones. Colombia es `57` seguido del celular.
+Formato internacional, sin `+`, espacios ni guiones. Colombia es `57` seguido del
+celular. En `tarjetas.html` el mismo número alimenta el QR y se muestra formateado solo.
 
-## Cómo está armado
+## Archivos
 
 | Archivo | Qué hace |
 | --- | --- |
-| `index.html` | Todo el contenido de la página |
-| `styles.css` | Estilos y tokens de color/tipografía |
-| `main.js` | Selector de síntomas → arma el mensaje de WhatsApp |
+| `index.html` | La landing completa |
+| `styles.css` | Estilos y tokens |
+| `main.js` | Enlaces de WhatsApp, tarjeta de diagnóstico y aparición al scroll |
+| `tarjetas.html` | Tarjetas de presentación 90×55 mm, listas para imprimir o exportar a PDF |
 
-El selector de síntomas del hero compone el texto que llega por WhatsApp, así el
-mensaje ya trae el problema descrito. Para agregar un síntoma nuevo basta con
-otro botón en `index.html`:
+## La tarjeta de diagnóstico
 
-```html
-<button type="button" class="chip" data-symptom="no conecta al wifi">No conecta al wifi</button>
+Es la pieza central del hero: un interruptor **Antes / Después** que mueve tres barras
+(temperatura, arranque, espacio) entre el estado de un equipo descuidado y el de uno
+recién mantenido. Vende el resultado sin necesidad de explicarlo.
+
+Las cifras son de un equipo típico, no medidas de un cliente real, y la propia tarjeta
+lo dice al pie. Están en `main.js`, en el objeto `STATE`:
+
+```js
+const STATE = {
+  despues: { temp: ['54°C', 30], ... },
+  antes:   { temp: ['87°C', 94], ... },
+};
 ```
 
-El valor de `data-symptom` se inserta en la frase `Hola Kevin, mi computador <symptom>. ¿Me ayudas?`,
-así que se escribe en tercera persona y sin punto final.
+Cada valor es `[texto, porcentaje de la barra]`.
+
+## Sobre testimonios
+
+La página **no** lleva reseñas. Cuando tengas clientes reales, pídeles una frase y su
+nombre con autorización, y se agrega una sección con las de verdad. Publicar
+testimonios inventados en una página que cobra por un servicio es engañar a quien
+llega a contratarte.
+
+## Tarjetas de presentación
+
+Abre `/tarjetas.html`, revisa que el QR y el número estén bien, y usa **Imprimir →
+Guardar como PDF**. Están a tamaño real (90 × 55 mm) con guía de corte punteada.
+Para litografía, pide 3 mm de sangrado.
 
 ## Ver en local
-
-Cualquier servidor estático sirve:
 
 ```bash
 python -m http.server 8000
 ```
-
-## Dominio
-
-`pc.kgstudio.top` está asignado a este proyecto en Vercel. El DNS de `kgstudio.top`
-también vive en Vercel (nameservers `ns1/ns2.vercel-dns.com`), así que el subdominio
-resuelve por el registro comodín y no necesita un registro propio. El certificado lo
-emite Vercel automáticamente.
