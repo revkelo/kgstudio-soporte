@@ -2,7 +2,8 @@
 
 Landing del servicio técnico de computadores: <https://pc.kgstudio.top>
 
-Sitio estático puro (HTML + CSS + JS, sin build) servido por GitHub Pages desde la raíz de `main`.
+Sitio estático puro (HTML + CSS + JS, sin build) desplegado en Vercel. Cada push a `main`
+publica en producción.
 
 ## Cambiar el número de WhatsApp
 
@@ -21,7 +22,6 @@ Formato internacional, sin `+`, espacios ni guiones. Colombia es `57` seguido de
 | `index.html` | Todo el contenido de la página |
 | `styles.css` | Estilos y tokens de color/tipografía |
 | `main.js` | Selector de síntomas → arma el mensaje de WhatsApp |
-| `CNAME` | Dominio propio para GitHub Pages. **No borrar.** |
 
 El selector de síntomas del hero compone el texto que llega por WhatsApp, así el
 mensaje ya trae el problema descrito. Para agregar un síntoma nuevo basta con
@@ -44,5 +44,7 @@ python -m http.server 8000
 
 ## Dominio
 
-`pc.kgstudio.top` → CNAME en Vercel DNS apuntando a `revkelo.github.io`, más el
-archivo `CNAME` de este repo. El HTTPS lo emite GitHub con Let's Encrypt.
+`pc.kgstudio.top` está asignado a este proyecto en Vercel. El DNS de `kgstudio.top`
+también vive en Vercel (nameservers `ns1/ns2.vercel-dns.com`), así que el subdominio
+resuelve por el registro comodín y no necesita un registro propio. El certificado lo
+emite Vercel automáticamente.
