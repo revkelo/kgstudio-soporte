@@ -1,0 +1,11 @@
+# Reinicia — mantenimiento de computadores en Bogotá (kgstudio).
+# El mismo contenido responde en reinicia. y pc.kgstudio.top; el canonical de
+# index.html manda a reinicia, así que no hay problema de duplicado.
+
+User-agent: *
+Allow: /
+
+# Las tarjetas de presentación son una hoja para imprimir, no una página.
+Disallow: /tarjetas.html
+
+Sitemap: https://reinicia.kgstudio.top/sitemap.xml

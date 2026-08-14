@@ -271,6 +271,8 @@ footer{border-top:1px solid var(--line);padding:38px 0}
 .foot-links a:hover{color:var(--ink)}
 .foot-by{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--muted);width:100%;padding-top:18px;margin-top:6px;border-top:1px solid var(--line);line-height:1.7}
 .foot-by a{color:var(--teal-deep);font-weight:500}
+/* El nombre y la dirección del negocio, tal como aparecen en Google Maps. */
+.foot-nap{display:inline-block;margin-top:6px;opacity:.75}
 
 /* ---------- reveal ---------- */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}

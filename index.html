@@ -2,15 +2,21 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reinicia · Mantenimiento de computadores en tu conjunto</title>
-<meta name="description" content="Mantenimiento de computadores hecho por un ingeniero de sistemas, aquí mismo en el conjunto. Limpieza, pasta térmica y optimización desde $30.000, con garantía de 8 días.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Mantenimiento de computadores en Bogotá · Reinicia (kgstudio)</title>
+<meta name="description" content="Mantenimiento de computadores y portátiles en Bogotá, hecho por un ingeniero de sistemas. Limpieza interna, pasta térmica, formateo y optimización desde $30.000, con garantía de 8 días. Voy hasta tu casa.">
 <link rel="canonical" href="https://reinicia.kgstudio.top/">
+<meta name="author" content="Kevin Gonzalez">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="geo.region" content="CO-DC">
+<meta name="geo.placename" content="Bogotá">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://reinicia.kgstudio.top/">
-<meta property="og:title" content="Reinicia · Tu computador rápido y fresco otra vez">
-<meta property="og:description" content="Mantenimiento de computadores en tu propio conjunto. Bajas tu equipo, te lo devuelvo volando.">
+<meta property="og:site_name" content="Reinicia · kgstudio">
+<meta property="og:title" content="Reinicia · Mantenimiento de computadores en Bogotá">
+<meta property="og:description" content="Limpieza, pasta térmica y optimización desde $30.000, con garantía de 8 días. Lo hace un ingeniero de sistemas, no un local de esquina.">
 <meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#12B8A6">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='26' fill='%230E1A22'/%3E%3Cg fill='none' stroke='%2312B8A6' stroke-width='11' stroke-linecap='round'%3E%3Cpath d='M71.6 28.1 A34 34 0 1 1 48.4 28.1'/%3E%3Cline x1='60' y1='20' x2='60' y2='54'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,16 +24,139 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
+<!--
+  El negocio se declara con el mismo `@id` que en kgstudio.top y con el mismo
+  nombre y dirección que la ficha de Google Business ("kgstudio", Calle 155
+  #14-80). Esa terna —nombre, dirección, sitio web idénticos en los tres
+  lados— es lo que hace que Google una la ficha del mapa con esta página.
+  Si cambias uno, cambia los tres o el vínculo se rompe.
+
+  Reinicia no es otro negocio: es el servicio de mantenimiento que presta
+  kgstudio, y así está escrito abajo.
+-->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Reinicia",
-  "description": "Mantenimiento de computadores a domicilio dentro del conjunto residencial.",
-  "url": "https://reinicia.kgstudio.top",
-  "areaServed": { "@type": "City", "name": "Bogotá" },
-  "priceRange": "$30.000 - $60.000 COP",
-  "founder": { "@type": "Person", "name": "Kevin Gonzalez", "url": "https://kgstudio.top" }
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://kgstudio.top/#kgstudio",
+      "additionalType": "https://en.wikipedia.org/wiki/Computer_repair_technician",
+      "name": "kgstudio",
+      "alternateName": ["KG Studio", "Reinicia"],
+      "url": "https://kgstudio.top/",
+      "description": "Mantenimiento de computadores y desarrollo de software en Bogotá, a cargo del ingeniero de sistemas Kevin Gonzalez.",
+      "email": "kgagudelo@gmail.com",
+      "priceRange": "$30.000 - $60.000 COP",
+      "currenciesAccepted": "COP",
+      "paymentAccepted": "Efectivo, Nequi, Daviplata, transferencia",
+      "knowsLanguage": ["es", "en"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle 155 #14-80",
+        "addressLocality": "Bogotá",
+        "addressRegion": "Bogotá D.C.",
+        "addressCountry": "CO"
+      },
+      "areaServed": { "@type": "City", "name": "Bogotá", "containedInPlace": { "@type": "Country", "name": "Colombia" } },
+      "founder": { "@id": "https://kgstudio.top/#kevin" },
+      "employee": { "@id": "https://kgstudio.top/#kevin" },
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Google Knowledge Graph MID",
+        "value": "/g/11zds2s_mr"
+      },
+      "sameAs": [
+        "https://www.google.com/search?kgmid=/g/11zds2s_mr",
+        "https://github.com/revkelo",
+        "https://www.linkedin.com/in/kagonzalezdev"
+      ],
+      "makesOffer": { "@id": "https://reinicia.kgstudio.top/#servicio" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kgstudio.top/#kevin",
+      "name": "Kevin Gonzalez",
+      "alternateName": "kagonzalezdev",
+      "url": "https://kgstudio.top/",
+      "jobTitle": "Ingeniero de sistemas",
+      "sameAs": [
+        "https://github.com/revkelo",
+        "https://www.linkedin.com/in/kagonzalezdev"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://reinicia.kgstudio.top/#servicio",
+      "name": "Reinicia — mantenimiento de computadores",
+      "serviceType": "Mantenimiento y reparación de computadores",
+      "url": "https://reinicia.kgstudio.top/",
+      "description": "Limpieza interna, cambio de pasta térmica, limpieza de software, drivers, optimización de arranque y chequeo de salud del equipo. Con garantía de 8 días.",
+      "provider": { "@id": "https://kgstudio.top/#kgstudio" },
+      "areaServed": { "@type": "City", "name": "Bogotá" },
+      "availableLanguage": "es",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Mantenimiento de computadores",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Mantenimiento de portátil",
+            "description": "Desarme, limpieza interna, cambio de pasta térmica, limpieza de software, drivers y optimización de arranque.",
+            "price": "60000",
+            "priceCurrency": "COP",
+            "priceSpecification": { "@type": "PriceSpecification", "minPrice": "60000", "priceCurrency": "COP", "valueAddedTaxIncluded": true },
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Mantenimiento de torre o computador de escritorio",
+            "description": "Limpieza interna a fondo, pasta térmica, revisión de ventiladores, limpieza de software y optimización.",
+            "price": "50000",
+            "priceCurrency": "COP",
+            "priceSpecification": { "@type": "PriceSpecification", "minPrice": "50000", "priceCurrency": "COP", "valueAddedTaxIncluded": true },
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Mantenimiento solo software",
+            "description": "Sin abrir el equipo: limpieza lógica, quitar basura, optimización de arranque, actualizaciones y antivirus.",
+            "price": "30000",
+            "priceCurrency": "COP",
+            "priceSpecification": { "@type": "PriceSpecification", "minPrice": "30000", "priceCurrency": "COP", "valueAddedTaxIncluded": true },
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://reinicia.kgstudio.top/#pagina",
+      "url": "https://reinicia.kgstudio.top/",
+      "name": "Mantenimiento de computadores en Bogotá · Reinicia",
+      "inLanguage": "es-CO",
+      "about": { "@id": "https://reinicia.kgstudio.top/#servicio" },
+      "author": { "@id": "https://kgstudio.top/#kevin" },
+      "publisher": { "@id": "https://kgstudio.top/#kgstudio" }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://reinicia.kgstudio.top/#faq",
+  "url": "https://reinicia.kgstudio.top/",
+  "inLanguage": "es-CO",
+  "about": { "@id": "https://reinicia.kgstudio.top/#servicio" },
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": { "@type": "Answer", "text": "Depende del equipo y de la falla. Escríbeme, reviso el caso y te doy el valor exacto antes de tocar nada. Preguntar no cuesta." } },
+    { "@type": "Question", "name": "¿Pierdo mis archivos?", "acceptedAnswer": { "@type": "Answer", "text": "No. Antes de formatear o cambiar un disco hago una copia de tus documentos, fotos y descargas, y te la entrego junto con el equipo." } },
+    { "@type": "Question", "name": "¿Cuánto se demora?", "acceptedAnswer": { "@type": "Answer", "text": "El mantenimiento toma entre 40 y 60 minutos. Si hay que cambiar una pieza, depende del repuesto y te aviso el tiempo cuando te paso el precio." } },
+    { "@type": "Question", "name": "¿Dan garantía?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. El mantenimiento queda garantizado 8 días. Si algo falla por lo que hice, lo reviso sin costo." } }
+  ]
 }
 </script>
 </head>
@@ -38,10 +167,18 @@
 <!-- NAV -->
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="/">
+    <a class="brand" href="#top">
       <svg class="logo-mark" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="#12B8A6" stroke-width="11" stroke-linecap="round"><path d="M71.6 28.1 A34 34 0 1 1 48.4 28.1"/><line x1="60" y1="20" x2="60" y2="54"/></g></svg>
       <span class="brand-text">Reinicia<small>Mantenimiento de PC</small></span>
     </a>
+
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Cómo funciona</a>
+      <a href="#jornada">Jornada</a>
+      <a href="#tarjeta">Mi tarjeta</a>
+    </nav>
+
     <a class="nav-cta" data-wa data-msg="Hola Kevin, quiero agendar un mantenimiento de mi computador.">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.37-.15-.2-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.15.12.32.02.51-.09.2-.14.32-.27.49-.14.17-.29.37-.41.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.61-.13.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
       <span>WhatsApp</span>
@@ -49,7 +186,7 @@
   </div>
 </header>
 
-<main>
+<main id="top">
 
 <!-- HERO -->
 <section class="hero">
@@ -64,7 +201,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.37-.15-.2-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.15.12.32.02.51-.09.2-.14.32-.27.49-.14.17-.29.37-.41.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.61-.13.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
           Escríbeme por WhatsApp
         </a>
-        <a class="btn-ghost" href="#jornada">Ver la jornada del mes</a>
+        <a class="btn-ghost" href="#tarjeta">Guardar mi contacto</a>
       </div>
       <div class="hero-tags">
         <span>Aquí en el conjunto</span>
@@ -129,6 +266,7 @@
         <h3>Portátil</h3>
         <p>Desarme, limpieza interna, cambio de pasta térmica, limpieza de software, drivers y optimización de arranque.</p>
         <div class="price"><span class="from">Desde</span><span class="amt">$60.000</span></div>
+        <a class="card-cta" data-wa data-msg="Hola Kevin, quiero un mantenimiento para mi portátil.">Pedir este →</a>
       </div>
 
       <div class="card reveal">
@@ -136,6 +274,7 @@
         <h3>Torre / Escritorio</h3>
         <p>Limpieza interna a fondo, pasta térmica, revisión de ventiladores, limpieza de software y optimización.</p>
         <div class="price"><span class="from">Desde</span><span class="amt">$50.000</span></div>
+        <a class="card-cta" data-wa data-msg="Hola Kevin, quiero un mantenimiento para mi torre de escritorio.">Pedir este →</a>
       </div>
 
       <div class="card reveal">
@@ -143,6 +282,7 @@
         <h3>Solo software</h3>
         <p>Sin abrir el equipo: limpieza lógica, quitar basura, optimización de arranque, actualizaciones y antivirus.</p>
         <div class="price"><span class="from">Desde</span><span class="amt">$30.000</span></div>
+        <a class="card-cta" data-wa data-msg="Hola Kevin, quiero el servicio de solo software.">Pedir este →</a>
       </div>
 
     </div>
@@ -205,6 +345,121 @@
   </div>
 </section>
 
+<!-- ── TARJETA ─────────────────────────────────────────────────────
+     La tarjeta se arma aquí mismo, en vivo. El vecino se guarda el
+     contacto; yo la imprimo a tamaño real desde esta misma sección. -->
+<section id="tarjeta">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Mi tarjeta</span>
+      <h2>Llévate mi contacto.</h2>
+      <p>Guárdala en el teléfono o escanea el código y me escribes directo. Sin buscar el número después.</p>
+    </div>
+
+    <div class="tarjeta-grid">
+
+      <div class="card-stage reveal">
+        <div class="bcard" id="bcard">
+          <!-- FRENTE -->
+          <div class="bcard__face bcard__front">
+            <div class="bc-top">
+              <svg class="bc-logo" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="#12B8A6" stroke-width="11" stroke-linecap="round"><path d="M71.6 28.1 A34 34 0 1 1 48.4 28.1"/><line x1="60" y1="20" x2="60" y2="54"/></g></svg>
+              <div>
+                <div class="bc-wordmark">Reinicia</div>
+                <div class="bc-kicker">Mantenimiento de PC</div>
+              </div>
+            </div>
+            <div class="bc-tagline">Tu computador rápido y fresco otra vez.</div>
+            <div class="bc-bottom">
+              <span class="bc-bar"></span>
+              <div>
+                <b>Kevin Gonzalez</b>
+                <span>Ingeniero de sistemas</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- REVERSO -->
+          <div class="bcard__face bcard__back">
+            <div class="bc-left">
+              <div class="bc-brand">
+                <svg class="bc-logo-sm" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="#12B8A6" stroke-width="11" stroke-linecap="round"><path d="M71.6 28.1 A34 34 0 1 1 48.4 28.1"/><line x1="60" y1="20" x2="60" y2="54"/></g></svg>
+                <span class="bc-name">Reinicia</span>
+              </div>
+              <div class="bc-svc">
+                <div class="bc-row"><span>Mantenimiento portátil</span><b>$60.000</b></div>
+                <div class="bc-row"><span>Torre / escritorio</span><b>$50.000</b></div>
+                <div class="bc-row"><span>Solo software</span><b>$30.000</b></div>
+              </div>
+              <div class="bc-badges">
+                <span class="bc-badge" id="bcTorre">Aquí en tu conjunto</span>
+                <span class="bc-badge">Garantía 8 días</span>
+              </div>
+            </div>
+            <div class="bc-right">
+              <div class="bc-qr" id="bcQr"><span class="bc-qr-ph">QR a WhatsApp</span></div>
+              <div class="bc-contact">
+                <div class="bc-wa">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2z"/></svg>
+                  <span id="bcNumber">300 000 0000</span>
+                </div>
+                <div class="bc-url">reinicia.kgstudio.top</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button type="button" class="chip-btn" id="flipBtn" aria-pressed="false">Ver el reverso</button>
+        </div>
+      </div>
+
+      <div class="tarjeta-side reveal">
+        <a class="btn-primary" id="saveVcf" href="#" download="Kevin Gonzalez - Reinicia.vcf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>
+          Guardar en mis contactos
+        </a>
+        <p class="tarjeta-note">Se descarga un archivo de contacto que el teléfono abre solo. Queda con mi nombre, el WhatsApp y la dirección de esta página.</p>
+
+        <a class="btn-ghost" data-wa data-msg="Hola Kevin, vi tu tarjeta y quiero un mantenimiento.">Mejor escríbeme ahora</a>
+
+        <details class="tarjeta-print">
+          <summary>Soy Kevin, quiero imprimirlas</summary>
+          <p>Se imprimen a tamaño real (90 × 55 mm), frente y reverso en páginas separadas. Para litografía, exporta a PDF y pide 3 mm de sangrado.</p>
+          <button type="button" class="chip-btn" id="printBtn">Imprimir / Guardar PDF</button>
+          <p class="tarjeta-hint" id="editHint">Para cambiar el número o la torre, abre esta página con <code>?editar</code> al final.</p>
+        </details>
+      </div>
+
+    </div>
+
+    <!-- Editor: solo aparece con ?editar en la URL. -->
+    <form class="editor" id="editor" hidden>
+      <p class="editor__title">Datos de la tarjeta</p>
+      <div class="editor__fields">
+        <label>
+          <span>WhatsApp</span>
+          <input type="tel" id="inTel" inputmode="numeric" placeholder="3001234567" autocomplete="off">
+          <em>Solo el celular, 10 dígitos. El 57 se agrega solo.</em>
+        </label>
+        <label>
+          <span>Torre</span>
+          <input type="text" id="inTorre" placeholder="4" autocomplete="off">
+          <em>Aparece en la tarjeta y en la sección de confianza.</em>
+        </label>
+      </div>
+      <p class="editor__warn">
+        Esto cambia lo que ves <strong>en este navegador</strong>, para que puedas imprimir ya.
+        Para que quede publicado hay que pegar esta línea en <code>main.js</code>:
+      </p>
+      <div class="editor__code">
+        <code id="codeLine">const WHATSAPP = '57XXXXXXXXXX';</code>
+        <button type="button" class="chip-btn" id="copyCode">Copiar</button>
+      </div>
+    </form>
+  </div>
+</section>
+
 <!-- CONFIANZA -->
 <section id="confianza">
   <div class="wrap trust-grid">
@@ -223,10 +478,27 @@
     <div class="signoff reveal">
       <div class="who">
         <div class="av">K</div>
-        <div><b>Kevin Gonzalez</b><span>@kagonzalezdev</span></div>
+        <div><b>Kevin Gonzalez</b><span>Ingeniero de sistemas</span></div>
       </div>
-      <q>Vivo aquí mismo, en la torre [X]. Trabajo con computadores todos los días y quería ofrecerles a los vecinos un servicio serio, cercano y sin vueltas. Tu equipo queda como nuevo y tú ni tienes que salir.</q>
+      <q>Vivo aquí mismo, en la <span id="torreTexto">torre [X]</span>. Trabajo con computadores todos los días y quería ofrecerles a los vecinos un servicio serio, cercano y sin vueltas. Tu equipo queda como nuevo y tú ni tienes que salir.</q>
       <p class="signoff-link"><a href="https://kgstudio.top" target="_blank" rel="noopener">Ver mi trabajo en kgstudio.top ↗</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- PREGUNTAS -->
+<section id="preguntas">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Preguntas</span>
+      <h2>Lo que todos me preguntan.</h2>
+    </div>
+    <div class="faq">
+      <details class="qa"><summary>¿Cuánto cuesta?</summary><p>Depende del equipo y de la falla, así que no pongo una lista que después no se cumpla. Escríbeme, reviso el caso y te doy el valor exacto antes de tocar nada. Preguntar no cuesta.</p></details>
+      <details class="qa"><summary>¿Pierdo mis archivos?</summary><p>No. Antes de formatear o cambiar un disco hago una copia de tus documentos, fotos y descargas, y te la entrego junto con el equipo.</p></details>
+      <details class="qa"><summary>¿Cuánto se demora?</summary><p>El mantenimiento toma entre 40 y 60 minutos. Si hay que cambiar una pieza depende del repuesto, y te aviso el tiempo estimado cuando te paso el precio.</p></details>
+      <details class="qa"><summary>¿Atienden Mac?</summary><p>Sí para software, respaldos y configuración. Para cambio de piezas trabajo sobre todo equipos Windows: si es un Mac, escríbeme y te digo de una si puedo o no.</p></details>
+      <details class="qa"><summary>¿Dan garantía?</summary><p>Sí, 8 días sobre el mantenimiento. Si algo falla por lo que hice, lo reviso sin costo. Los repuestos van con la garantía del fabricante.</p></details>
     </div>
   </div>
 </section>
@@ -246,7 +518,6 @@
 
 </main>
 
-<!-- FOOTER -->
 <footer>
   <div class="wrap foot-inner">
     <div class="brand">
@@ -257,12 +528,23 @@
       <a href="#servicios">Servicios</a>
       <a href="#incluye">Qué incluye</a>
       <a href="#jornada">Jornada</a>
+      <a href="#tarjeta">Mi tarjeta</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <div class="foot-by">reinicia.kgstudio.top · un servicio de <a href="https://kgstudio.top" target="_blank" rel="noopener">Kevin Gonzalez · @kagonzalezdev</a> — para los vecinos del conjunto.</div>
+    <!-- La dirección va escrita tal cual está en la ficha de Google Maps.
+         Google compara los dos textos: si no coinciden, no une la ficha con
+         esta página. No la "mejores" sin cambiarla también allá. -->
+    <div class="foot-by">
+      reinicia.kgstudio.top · un servicio de
+      <a href="https://kgstudio.top" target="_blank" rel="noopener author">Kevin Gonzalez</a>,
+      ingeniero de sistemas — para los vecinos del conjunto.
+      <br>
+      <span class="foot-nap">kgstudio · Calle 155 #14-80, Bogotá D.C., Colombia</span>
+    </div>
   </div>
 </footer>
 
+<script src="qrcode.js" defer></script>
 <script src="main.js" defer></script>
 </body>
 </html>

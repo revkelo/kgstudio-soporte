@@ -20,6 +20,29 @@ const WHATSAPP = '57XXXXXXXXXX';
 Formato internacional, sin `+`, espacios ni guiones. Colombia es `57` seguido del
 celular. En `tarjetas.html` el mismo número alimenta el QR y se muestra formateado solo.
 
+## SEO local (Google Maps)
+
+Esta es la página que tiene que aparecer cuando alguien busca "mantenimiento de
+computadores Bogotá". El marcado del `<head>` declara el negocio con el mismo
+`@id` que `kgstudio.top` y con el mismo nombre y dirección que la ficha de Google
+Business: **kgstudio · Calle 155 #14-80, Bogotá D.C.** Los tres textos —ficha,
+schema y pie de página— dicen exactamente lo mismo a propósito. Si cambias uno,
+cambia los tres o Google deja de unir la ficha con el sitio.
+
+Reinicia no se declara como otro negocio, sino como el `Service` que presta
+kgstudio, con su catálogo de precios (60/50/30 mil). Cuando muevas un precio en
+`index.html`, muévelo también en el `OfferCatalog`.
+
+Pendientes que no se resuelven desde el código:
+
+- Falta `og:image`: al compartir el enlace por WhatsApp sale sin miniatura. Basta
+  una imagen de 1200×630 en la raíz y su `<meta property="og:image">`.
+- Falta `telephone` en el schema hasta que exista el número del negocio.
+- El `sameAs` ya cita la ficha por su MID (`/g/11zds2s_mr`); falta `hasMap` con
+  el enlace directo al mapa.
+- La página sigue sin reseñas, y así debe quedarse hasta tener clientes reales
+  que las autoricen (ver más abajo).
+
 ## Archivos
 
 | Archivo | Qué hace |
@@ -28,6 +51,8 @@ celular. En `tarjetas.html` el mismo número alimenta el QR y se muestra formate
 | `styles.css` | Estilos y tokens |
 | `main.js` | Enlaces de WhatsApp, tarjeta de diagnóstico y aparición al scroll |
 | `tarjetas.html` | Tarjetas de presentación 90×55 mm, listas para imprimir o exportar a PDF |
+| `robots.txt` | Rastreo abierto menos las tarjetas, y ruta del sitemap |
+| `sitemap.xml` | La portada, con el host canónico (`reinicia.`, no `pc.`) |
 
 ## La tarjeta de diagnóstico
 
