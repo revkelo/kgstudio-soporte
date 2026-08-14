@@ -179,9 +179,11 @@
       <a href="#tarjeta">Mi tarjeta</a>
     </nav>
 
-    <a class="nav-cta" data-wa data-msg="Hola Kevin, quiero agendar un mantenimiento de mi computador.">
+    <!-- `data-alt` es el texto que se usa mientras no haya numero: el boton
+         cae al correo y lo dice, en vez de prometer un WhatsApp que no abre. -->
+    <a class="nav-cta" data-wa data-alt="Correo" data-msg="Hola Kevin, quiero agendar un mantenimiento de mi computador.">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.37-.15-.2-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.15.12.32.02.51-.09.2-.14.32-.27.49-.14.17-.29.37-.41.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.61-.13.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
-      <span>WhatsApp</span>
+      <span data-rotulo>WhatsApp</span>
     </a>
   </div>
 </header>
@@ -197,9 +199,9 @@
       <p class="lead">Limpieza interna, cambio de pasta térmica y optimización, hechos por un ingeniero de sistemas — sin que tu equipo salga a ningún lado.</p>
       <p class="sig">Bajas tu equipo, te lo devuelvo volando.</p>
       <div class="hero-ctas">
-        <a class="btn-primary" data-wa data-msg="Hola Kevin, quiero agendar un mantenimiento de mi computador.">
+        <a class="btn-primary" data-wa data-alt="Escríbeme por correo" data-msg="Hola Kevin, quiero agendar un mantenimiento de mi computador.">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.37-.15-.2-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.15.12.32.02.51-.09.2-.14.32-.27.49-.14.17-.29.37-.41.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.61-.13.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
-          Escríbeme por WhatsApp
+          <span data-rotulo>Escríbeme por WhatsApp</span>
         </a>
         <a class="btn-ghost" href="#tarjeta">Guardar mi contacto</a>
       </div>
@@ -401,7 +403,7 @@
               <div class="bc-contact">
                 <div class="bc-wa">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2z"/></svg>
-                  <span id="bcNumber">300 000 0000</span>
+                  <span id="bcNumber">kgagudelo@gmail.com</span>
                 </div>
                 <div class="bc-url">reinicia.kgstudio.top</div>
               </div>
@@ -428,6 +430,7 @@
           <p>Se imprimen a tamaño real (90 × 55 mm), frente y reverso en páginas separadas. Para litografía, exporta a PDF y pide 3 mm de sangrado.</p>
           <button type="button" class="chip-btn" id="printBtn">Imprimir / Guardar PDF</button>
           <p class="tarjeta-hint" id="editHint">Para cambiar el número o la torre, abre esta página con <code>?editar</code> al final.</p>
+          <p class="tarjeta-hint">Lo publicado sale de <code>datos.js</code>.</p>
         </details>
       </div>
 
@@ -450,10 +453,10 @@
       </div>
       <p class="editor__warn">
         Esto cambia lo que ves <strong>en este navegador</strong>, para que puedas imprimir ya.
-        Para que quede publicado hay que pegar esta línea en <code>main.js</code>:
+        Para que quede publicado hay que pegar esta línea en <code>datos.js</code>:
       </p>
       <div class="editor__code">
-        <code id="codeLine">const WHATSAPP = '57XXXXXXXXXX';</code>
+        <code id="codeLine">whatsapp: '57XXXXXXXXXX',</code>
         <button type="button" class="chip-btn" id="copyCode">Copiar</button>
       </div>
     </form>
@@ -480,7 +483,7 @@
         <div class="av">K</div>
         <div><b>Kevin Gonzalez</b><span>Ingeniero de sistemas</span></div>
       </div>
-      <q>Vivo aquí mismo, en la <span id="torreTexto">torre [X]</span>. Trabajo con computadores todos los días y quería ofrecerles a los vecinos un servicio serio, cercano y sin vueltas. Tu equipo queda como nuevo y tú ni tienes que salir.</q>
+      <q>Vivo aquí mismo, <span id="torreTexto">en el conjunto</span>. Trabajo con computadores todos los días y quería ofrecerles a los vecinos un servicio serio, cercano y sin vueltas. Tu equipo queda como nuevo y tú ni tienes que salir.</q>
       <p class="signoff-link"><a href="https://kgstudio.top" target="_blank" rel="noopener">Ver mi trabajo en kgstudio.top ↗</a></p>
     </div>
   </div>
@@ -509,9 +512,9 @@
     <span class="eyebrow">Agenda tu mantenimiento</span>
     <h2>¿Tu computador anda <span class="cool">lento</span>?<br>Yo estoy a un mensaje.</h2>
     <p>Escríbeme por WhatsApp y coordinamos. Aquí mismo, en el conjunto.</p>
-    <a class="btn-primary btn-lg" data-wa data-msg="Hola Kevin, quiero agendar un mantenimiento de mi computador.">
+    <a class="btn-primary btn-lg" data-wa data-alt="Escribir por correo" data-msg="Hola Kevin, quiero agendar un mantenimiento de mi computador.">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.37-.15-.2-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.15.12.32.02.51-.09.2-.14.32-.27.49-.14.17-.29.37-.41.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.61-.13.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
-      Escribir por WhatsApp
+      <span data-rotulo>Escribir por WhatsApp</span>
     </a>
   </div>
 </section>
@@ -544,6 +547,7 @@
   </div>
 </footer>
 
+<script src="datos.js" defer></script>
 <script src="qrcode.js" defer></script>
 <script src="main.js" defer></script>
 </body>

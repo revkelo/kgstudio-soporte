@@ -9,7 +9,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<!-- La librería va servida desde aquí, no desde un CDN: estas tarjetas se
+     imprimen, a veces sin buena conexión, y un QR que no cargó se convierte
+     en papel botado. -->
+<script src="qrcode.js"></script>
+<script src="datos.js"></script>
 <style>
   :root{
     --ink:#0E1A22; --surface:#FFFFFF; --bg:#EDF1F3;
@@ -160,25 +164,28 @@
 </div>
 
 <script>
-  // === EDITA AQUÍ tu número (con indicativo, sin signos) ===
-  var WHATSAPP = "57XXXXXXXXXX";
+  // El número sale de datos.js, el mismo que usa la landing. No se edita aquí:
+  // tenerlo en dos archivos era la forma segura de imprimir uno viejo.
+  var D = window.REINICIA;
 
-  // Muestra el número en formato legible: 300 123 4567
-  var local = WHATSAPP.replace(/^57/, "");
-  if (/^\d{10}$/.test(local)) {
-    document.getElementById("waNumber").textContent =
-      local.slice(0, 3) + " " + local.slice(3, 6) + " " + local.slice(6);
-  }
+  var legible = D.numeroLegible();
+  if (legible) document.getElementById("waNumber").textContent = legible;
+  else document.getElementById("waNumber").textContent = D.correo;
+
+  // Con número el QR abre el chat; sin él, la página, donde está el contacto.
+  var destino = D.numeroValido()
+    ? D.enlaceContacto("Hola Kevin, quiero un mantenimiento.")
+    : "https://" + D.sitio + "/";
 
   try {
     new QRCode(document.getElementById("qr"), {
-      text: "https://wa.me/" + WHATSAPP + "?text=Hola%20Kevin,%20quiero%20un%20mantenimiento",
+      text: destino,
       width: 208, height: 208,
       colorDark: "#0E1A22", colorLight: "#ffffff",
       correctLevel: QRCode.CorrectLevel.M
     });
   } catch (e) {
-    // Sin internet para cargar la librería queda el marco con la nota.
+    // Si algo falla queda el marco con la nota, no un cuadro en blanco.
   }
 </script>
 </body>

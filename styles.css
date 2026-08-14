@@ -57,6 +57,10 @@ header.nav{
 .brand{display:flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque';font-weight:700;font-size:1.28rem;letter-spacing:-.01em}
 .logo-mark{width:26px;height:26px;flex:none}
 .brand small{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;display:block;margin-top:-4px}
+.brand-text{display:block;line-height:1.15}
+.nav-links{display:flex;gap:26px;font-size:.94rem;font-weight:500;color:var(--muted)}
+.nav-links a{transition:color .18s ease}
+.nav-links a:hover{color:var(--ink)}
 .nav-cta{
   display:inline-flex;align-items:center;gap:8px;
   background:var(--ink);color:#fff;
@@ -187,6 +191,14 @@ section{padding:72px 0}
 .price .from{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-family:'JetBrains Mono',monospace}
 .price .amt{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:1.5rem;color:var(--ink)}
 .price-note{font-size:.78rem;color:var(--muted);margin-top:20px;max-width:70ch}
+/* El CTA de cada tarjeta de precio: es un enlace, así que necesita verse
+   pulsable sin competir con el botón principal del hero. */
+.card-cta{
+  margin-top:18px;align-self:flex-start;cursor:pointer;
+  font-weight:600;font-size:.94rem;color:var(--teal-deep);
+  border-bottom:1.5px solid transparent;transition:border-color .18s ease;
+}
+.card-cta:hover{border-color:var(--teal-deep)}
 
 /* ---------- qué incluye ---------- */
 .checks{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
@@ -250,12 +262,143 @@ section{padding:72px 0}
 }
 .signoff .who{display:flex;align-items:center;gap:14px;margin-bottom:16px}
 .signoff .av{width:52px;height:52px;border-radius:14px;background:var(--ink);color:var(--teal);display:grid;place-items:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:1.3rem}
-.signoff .who b{font-family:'Bricolage Grotesque';font-size:1.08rem}
-.signoff .who span{font-size:.85rem;color:var(--muted);font-family:'JetBrains Mono',monospace}
+/* `b` y `span` son inline: sin esto el nombre y el cargo salen pegados
+   en un solo renglón ("Kevin GonzalezIngeniero de sistemas"). */
+.signoff .who b{display:block;font-family:'Bricolage Grotesque';font-size:1.08rem;line-height:1.25}
+.signoff .who span{display:block;font-size:.85rem;color:var(--muted);font-family:'JetBrains Mono',monospace}
 .signoff q{display:block;font-size:1.02rem;color:var(--ink-soft);font-style:normal;line-height:1.6}
 .signoff-link{margin-top:18px;font-size:.9rem}
 .signoff-link a{color:var(--teal-deep);font-weight:600}
 .signoff-link a:hover{text-decoration:underline}
+
+/* ---------- tarjeta de presentación ----------
+   La tarjeta se dibuja a proporción real (90 × 55 mm) y todo lo que lleva
+   dentro se mide en `cqw`, o sea en porcentaje de su propio ancho. Así el
+   mismo marcado sirve para la miniatura del móvil y para la hoja de
+   impresión sin una sola media query: la tarjeta se escala entera, como
+   una foto, en vez de descuadrarse tipo por tipo. */
+.tarjeta-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start}
+
+.card-stage{container-type:inline-size;perspective:1600px}
+.bcard{
+  position:relative;width:100%;aspect-ratio:90/55;
+  transform-style:preserve-3d;
+  transition:transform .75s cubic-bezier(.2,.7,.2,1);
+}
+.bcard.flipped{transform:rotateY(180deg)}
+.bcard__face{
+  position:absolute;inset:0;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  border-radius:3.2cqw;padding:6.4cqw;overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+/* Frente: la marca y quién la respalda. Nada más. */
+.bcard__front{background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:space-between}
+.bc-top{display:flex;align-items:center;gap:3cqw}
+.bc-logo{width:9.5cqw;height:9.5cqw;flex:none}
+.bc-wordmark{font-family:'Bricolage Grotesque';font-weight:800;font-size:6.6cqw;letter-spacing:-.02em;line-height:1}
+.bc-kicker{font-family:'JetBrains Mono',monospace;font-size:2.4cqw;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-top:.6cqw}
+.bc-tagline{font-family:'Bricolage Grotesque';font-weight:600;font-size:4.4cqw;line-height:1.25;color:#DCE7E9;max-width:62cqw}
+.bc-bottom{display:flex;align-items:center;gap:3cqw}
+.bc-bar{width:1.1cqw;height:8cqw;border-radius:999px;background:var(--teal);flex:none}
+.bc-bottom b{display:block;font-family:'Bricolage Grotesque';font-weight:700;font-size:4cqw;line-height:1.2}
+.bc-bottom span{display:block;font-family:'JetBrains Mono',monospace;font-size:2.5cqw;color:#8FA6AB;letter-spacing:.04em}
+
+/* Reverso: lo que el vecino necesita para decidir y para escribir. */
+.bcard__back{
+  transform:rotateY(180deg);
+  background:var(--surface);border:1px solid var(--line);
+  display:grid;grid-template-columns:1fr auto;gap:5cqw;align-items:stretch;
+}
+.bc-left{display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+.bc-brand{display:flex;align-items:center;gap:2.2cqw}
+.bc-logo-sm{width:6cqw;height:6cqw;flex:none}
+.bc-name{font-family:'Bricolage Grotesque';font-weight:800;font-size:4.6cqw;letter-spacing:-.02em}
+.bc-svc{display:flex;flex-direction:column;gap:1.4cqw;margin:1cqw 0}
+.bc-row{display:flex;align-items:baseline;justify-content:space-between;gap:2cqw;font-size:3cqw;color:var(--ink-soft)}
+.bc-row b{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--ink);flex:none}
+.bc-badges{display:flex;flex-wrap:wrap;gap:1.6cqw}
+.bc-badge{
+  font-family:'JetBrains Mono',monospace;font-size:2.3cqw;letter-spacing:.04em;
+  background:var(--teal-wash);color:var(--teal-deep);
+  padding:1.1cqw 2.2cqw;border-radius:999px;
+}
+.bc-right{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:2.4cqw;flex:none}
+.bc-qr{
+  width:27cqw;height:27cqw;flex:none;
+  background:#fff;border:1px solid var(--line);border-radius:2cqw;
+  display:grid;place-items:center;overflow:hidden;padding:1.2cqw;
+}
+/* La librería inyecta un canvas y una img; que ocupen el cuadro entero. */
+.bc-qr canvas,.bc-qr img{width:100%!important;height:100%!important;display:block}
+.bc-qr-ph{font-family:'JetBrains Mono',monospace;font-size:2.1cqw;color:var(--muted);text-align:center;line-height:1.3;padding:1cqw}
+.bc-contact{text-align:center}
+.bc-wa{display:flex;align-items:center;justify-content:center;gap:1.4cqw;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:3cqw;color:var(--ink)}
+.bc-wa svg{width:3.4cqw;height:3.4cqw;flex:none;fill:var(--teal-deep)}
+/* Sin número la tarjeta muestra el correo, y el glifo de WhatsApp sobra:
+   dejarlo diría que se escribe por ahí. */
+.bc-wa.correo{font-size:2.5cqw;font-weight:500;color:var(--ink-soft);overflow-wrap:anywhere}
+.bc-wa.correo svg{display:none}
+.bc-url{font-family:'JetBrains Mono',monospace;font-size:2.3cqw;color:var(--muted);margin-top:.6cqw}
+
+.card-actions{display:flex;justify-content:center;margin-top:18px}
+.chip-btn{
+  font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.04em;
+  background:var(--surface);border:1.5px solid var(--line);color:var(--ink);
+  padding:9px 16px;border-radius:999px;cursor:pointer;
+  transition:border-color .18s ease,color .18s ease;
+}
+.chip-btn:hover{border-color:var(--teal);color:var(--teal-deep)}
+
+.tarjeta-side{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.tarjeta-side .btn-primary,.tarjeta-side .btn-ghost{width:100%;justify-content:center}
+.tarjeta-note{font-size:.88rem;color:var(--muted);line-height:1.55}
+.tarjeta-print{width:100%;border-top:1px dashed var(--line);padding-top:16px;margin-top:4px}
+.tarjeta-print summary{cursor:pointer;font-size:.88rem;font-weight:600;color:var(--teal-deep);list-style:none}
+.tarjeta-print summary::-webkit-details-marker{display:none}
+.tarjeta-print summary::before{content:"+ ";font-family:'JetBrains Mono',monospace}
+.tarjeta-print[open] summary::before{content:"− "}
+.tarjeta-print p{font-size:.85rem;color:var(--muted);margin:12px 0}
+.tarjeta-hint{font-size:.8rem}
+.tarjeta-hint code{font-family:'JetBrains Mono',monospace;background:var(--teal-wash);color:var(--teal-deep);padding:1px 6px;border-radius:5px}
+
+/* Editor: solo aparece con ?editar. Es una herramienta mía, no del visitante,
+   así que se ve como una consola y no como parte de la página. */
+.editor{
+  margin-top:36px;background:var(--surface);
+  border:1.5px dashed var(--line);border-radius:var(--radius);padding:24px;
+}
+.editor__title{font-family:'JetBrains Mono',monospace;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.editor__fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.editor__fields label{display:block}
+.editor__fields span{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
+.editor__fields input{
+  width:100%;font-family:'JetBrains Mono',monospace;font-size:.95rem;
+  padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;
+  background:var(--bg);color:var(--ink);
+}
+.editor__fields input:focus{outline:0;border-color:var(--teal)}
+.editor__fields em{display:block;font-style:normal;font-size:.76rem;color:var(--muted);margin-top:6px}
+.editor__warn{font-size:.85rem;color:var(--ink-soft);margin:18px 0 10px}
+.editor__warn code{font-family:'JetBrains Mono',monospace;background:var(--teal-wash);color:var(--teal-deep);padding:1px 6px;border-radius:5px}
+.editor__code{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--ink);border-radius:12px;padding:14px 16px}
+.editor__code code{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:#7FE3D6;flex:1;min-width:0;overflow-wrap:anywhere}
+
+/* ---------- preguntas ---------- */
+.faq{display:flex;flex-direction:column;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.qa{background:var(--surface)}
+.qa summary{
+  cursor:pointer;list-style:none;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  font-family:'Bricolage Grotesque';font-weight:600;font-size:1.08rem;
+  padding:20px 22px;
+}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";font-family:'JetBrains Mono',monospace;font-weight:400;font-size:1.3rem;color:var(--teal-deep);flex:none;transition:transform .2s ease}
+.qa[open] summary::after{content:"−"}
+.qa summary:hover{color:var(--teal-deep)}
+.qa p{color:var(--muted);font-size:.96rem;padding:0 22px 22px;max-width:70ch}
 
 /* ---------- CTA final ---------- */
 .final{text-align:center;padding:88px 0}
@@ -280,11 +423,24 @@ footer{border-top:1px solid var(--line);padding:38px 0}
 
 /* ---------- responsive ---------- */
 @media(max-width:900px){
+  /* Los enlaces del nav no caben junto a la marca y el botón; el botón es
+     lo que convierte, así que los enlaces son los que se van. Las secciones
+     siguen alcanzables por scroll y desde el pie. */
+  .nav-links{display:none}
   .hero-grid{grid-template-columns:1fr;gap:40px}
   .svc-grid{grid-template-columns:1fr}
   .checks{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr}
   .trust-grid{grid-template-columns:1fr;gap:32px}
+  .tarjeta-grid{grid-template-columns:1fr;gap:34px}
+  /* Suelta, la tarjeta se estiraría a todo el ancho y perdería la escala de
+     objeto que la hace legible como tarjeta.
+
+     Se centra con `justify-self`, NO con `margin:0 auto`: los márgenes auto
+     anulan el estirado del grid y dejan al ítem a su tamaño de contenido, y
+     como `.card-stage` es contenedor de consultas su contenido no aporta
+     ancho — la tarjeta colapsaba a cero y desaparecía en móvil. */
+  .card-stage,.tarjeta-side{max-width:460px;width:100%;justify-self:center}
 }
 @media(max-width:560px){
   .wrap{padding:0 18px}
@@ -296,6 +452,11 @@ footer{border-top:1px solid var(--line);padding:38px 0}
   .brand small{display:none}
   .nav-cta span{display:none}
   .nav-cta{padding:11px 13px}
+  .jornada-inner .btn-primary{width:100%;justify-content:center}
+  .editor__fields{grid-template-columns:1fr}
+  .qa summary{font-size:1rem;padding:17px 18px}
+  .qa p{padding:0 18px 18px}
+  .foot-inner{flex-direction:column;align-items:flex-start;gap:20px}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}

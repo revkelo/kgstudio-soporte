@@ -6,19 +6,30 @@ Mantenimiento de computadores para los vecinos del conjunto.
 Sitio estático puro (HTML + CSS + JS, sin build) desplegado en Vercel. Cada push a
 `main` publica en producción.
 
-## Pendientes antes de repartir tarjetas
+## Lo único que falta: el número
 
-| Dato | Dónde |
-| --- | --- |
-| Número de WhatsApp | `main.js` línea 8 y `tarjetas.html` (al final) |
-| Número de torre | `index.html`, en la cita de la sección Confianza (`torre [X]`) |
+Todo sale de `datos.js`, y de ahí lo leen la landing y la hoja de tarjetas. Antes
+estaba escrito en dos archivos, que es la forma segura de acabar repartiendo
+tarjetas con un número viejo.
 
 ```js
-const WHATSAPP = '57XXXXXXXXXX';
+whatsapp: '57XXXXXXXXXX',   // internacional, sin + ni espacios: 57 + celular
+torre: '',                  // vacío = la página no menciona torre
 ```
 
-Formato internacional, sin `+`, espacios ni guiones. Colombia es `57` seguido del
-celular. En `tarjetas.html` el mismo número alimenta el QR y se muestra formateado solo.
+**Mientras el número diga `XXXX`, la página no se rompe:** cada botón cae al correo
+y cambia su propio texto ("Escríbeme por correo" en vez de "por WhatsApp"), el QR
+apunta al sitio en lugar de a un chat inexistente y la tarjeta muestra el correo.
+Un CTA que promete WhatsApp y abre un error de WhatsApp es peor que no tenerlo.
+
+El día que tengas el número, cambias esa línea y todo se reconecta solo.
+
+### Probar sin publicar
+
+Abre la página con `?editar` al final y aparece un formulario para número y torre.
+Cambia lo que ves **en ese navegador** (queda en `localStorage`), suficiente para
+imprimir tarjetas ya mismo, y te muestra la línea exacta para pegar en `datos.js`
+cuando quieras publicarlo.
 
 ## SEO local (Google Maps)
 
@@ -49,7 +60,9 @@ Pendientes que no se resuelven desde el código:
 | --- | --- |
 | `index.html` | La landing completa |
 | `styles.css` | Estilos y tokens |
-| `main.js` | Enlaces de WhatsApp, tarjeta de diagnóstico y aparición al scroll |
+| `datos.js` | Número, torre y contacto. **El único archivo con datos** |
+| `main.js` | Contacto, tarjeta de diagnóstico, tarjeta de presentación y scroll |
+| `qrcode.js` | Generador de QR (davidshimjs, MIT), servido desde aquí |
 | `tarjetas.html` | Tarjetas de presentación 90×55 mm, listas para imprimir o exportar a PDF |
 | `robots.txt` | Rastreo abierto menos las tarjetas, y ruta del sitemap |
 | `sitemap.xml` | La portada, con el host canónico (`reinicia.`, no `pc.`) |
@@ -81,9 +94,18 @@ llega a contratarte.
 
 ## Tarjetas de presentación
 
-Abre `/tarjetas.html`, revisa que el QR y el número estén bien, y usa **Imprimir →
-Guardar como PDF**. Están a tamaño real (90 × 55 mm) con guía de corte punteada.
-Para litografía, pide 3 mm de sangrado.
+En la sección **Mi tarjeta** de la landing la tarjeta está dibujada a proporción
+real (90 × 55 mm) y se voltea para ver el reverso. El visitante puede descargarse
+un `.vcf` que su teléfono abre solo, o escanear el QR.
+
+Todo lo de adentro se mide en `cqw` —porcentaje del ancho de la propia tarjeta—
+en vez de en píxeles, así que la misma tarjeta sirve para la miniatura del móvil
+y para la hoja de impresión sin una media query: se escala entera, como una foto,
+en lugar de descuadrarse tipo por tipo.
+
+Para imprimirlas, abre `/tarjetas.html`, revisa que el QR y el número estén bien,
+y usa **Imprimir → Guardar como PDF**. Están a tamaño real con guía de corte
+punteada. Para litografía, pide 3 mm de sangrado.
 
 ## Ver en local
 
