@@ -1,5 +1,5 @@
 /* ============================================================
-   Reinicia — landing
+   Reinicia - landing
    ============================================================ */
 
 // Los datos viven en datos.js, que también carga la hoja de tarjetas.
@@ -198,7 +198,7 @@ function pintarVcf() {
     'VERSION:3.0',
     'N:Gonzalez;Kevin;;;',
     'FN:Kevin Gonzalez',
-    'ORG:Reinicia — kgstudio',
+    'ORG:Reinicia - kgstudio',
     'TITLE:Ingeniero de sistemas',
   ];
   if (hayNumero()) lineas.push(`TEL;TYPE=CELL:+${estado.whatsapp}`);

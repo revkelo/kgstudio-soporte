@@ -1,5 +1,5 @@
 /* ============================================================
-   Reinicia — datos del negocio
+   Reinicia - datos del negocio
    ------------------------------------------------------------
    El ÚNICO archivo que hay que tocar. Lo cargan la landing y la
    hoja de tarjetas, así que el número vive en un solo lugar: antes

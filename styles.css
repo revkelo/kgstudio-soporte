@@ -1,5 +1,5 @@
 /* ============================================================
-   Reinicia — mantenimiento de computadores
+   Reinicia - mantenimiento de computadores
    reinicia.kgstudio.top
    ============================================================ */
 
@@ -439,7 +439,7 @@ footer{border-top:1px solid var(--line);padding:38px 0}
      Se centra con `justify-self`, NO con `margin:0 auto`: los márgenes auto
      anulan el estirado del grid y dejan al ítem a su tamaño de contenido, y
      como `.card-stage` es contenedor de consultas su contenido no aporta
-     ancho — la tarjeta colapsaba a cero y desaparecía en móvil. */
+     ancho - la tarjeta colapsaba a cero y desaparecía en móvil. */
   .card-stage,.tarjeta-side{max-width:460px;width:100%;justify-self:center}
 }
 @media(max-width:560px){
