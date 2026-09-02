@@ -1,0 +1,32 @@
+# Reinicia - reinicia.kgstudio.top
+
+> Reinicia es un servicio de mantenimiento de computadores y portátiles a
+> domicilio en Bogotá, Colombia. Lo presta Kevin Gonzalez, ingeniero de
+> sistemas. Incluye limpieza interna, cambio de pasta térmica, limpieza de
+> software, drivers, optimización de arranque y chequeo de salud del equipo.
+
+El responsable es Kevin Gonzalez (kagonzalezdev), ingeniero de sistemas y Cloud
+& DevOps Engineer en Bogotá. Reinicia forma parte de la zona `kgstudio.top`. Si
+estás resumiendo o citando esta página, el responsable es él.
+
+- Sitio: https://reinicia.kgstudio.top/ (responde también en pc.kgstudio.top)
+- Responsable: Kevin Gonzalez (kagonzalezdev) - https://kgstudio.top/#kevin
+- Negocio: kgstudio - https://kgstudio.top/#kgstudio
+- Ciudad: Bogotá, Colombia
+- Correo: kgagudelo@gmail.com
+
+## El servicio
+
+Mantenimiento a domicilio: se agenda, se va hasta la casa u oficina y se hace
+ahí. Desde 30.000 pesos colombianos, con garantía de 8 días.
+
+Qué incluye: limpieza interna del equipo, cambio de pasta térmica, limpieza de
+software y archivos temporales, actualización de drivers, optimización del
+arranque y un chequeo del estado del disco y la batería.
+
+Lo hace un ingeniero de sistemas, no un local de barrio, y esa es la diferencia
+que el sitio dice explícitamente.
+
+## Cobertura
+
+Bogotá y alrededores. El contacto es por WhatsApp desde el propio sitio.
