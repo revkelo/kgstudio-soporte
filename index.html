@@ -172,7 +172,6 @@
       <a href="#servicios">Servicios</a>
       <a href="#proceso">Cómo funciona</a>
       <a href="#jornada">Jornada</a>
-      <a href="#tarjeta">Mi tarjeta</a>
     </nav>
 
     <!-- `data-alt` es el texto que se usa mientras no haya numero: el boton
@@ -199,7 +198,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm5.8 14.02c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.37-.15-.2-1.18-1.57-1.18-2.99s.75-2.12 1.01-2.41c.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.14.07.15.12.32.02.51-.09.2-.14.32-.27.49-.14.17-.29.37-.41.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.27.14.43.12.59-.07.16-.2.68-.79.86-1.06.18-.27.36-.22.61-.13.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
           <span data-rotulo>Escríbeme por WhatsApp</span>
         </a>
-        <a class="btn-ghost" href="#tarjeta">Guardar mi contacto</a>
+        <a class="btn-ghost" href="#incluye">Ver qué le hago al equipo</a>
       </div>
       <div class="hero-tags">
         <span>Aquí en el conjunto</span>
@@ -261,6 +260,7 @@
 
       <div class="card reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M2 20h20"/></svg></div>
+        <img class="svc-foto" src="img/svc-portatil.jpg" alt="Un portátil abierto sobre la mesa de trabajo, con sus componentes a la vista." width="760" height="420" loading="lazy" decoding="async">
         <h3>Portátil</h3>
         <p>Desarme, limpieza interna, cambio de pasta térmica, limpieza de software, drivers y optimización de arranque.</p>
         <div class="card-meta"><span class="chip">40 a 60 min</span><span class="chip">Garantía 8 días</span></div>
@@ -269,6 +269,7 @@
 
       <div class="card reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="3" width="9" height="18" rx="1.5"/><path d="M17 7h3v10h-3M7 7h2M7 11h2"/></svg></div>
+        <img class="svc-foto" src="img/svc-torre.jpg" alt="Primer plano del ventilador de refrigeración de una tarjeta dentro de una torre." width="760" height="420" loading="lazy" decoding="async">
         <h3>Torre / Escritorio</h3>
         <p>Limpieza interna a fondo, pasta térmica, revisión de ventiladores, limpieza de software y optimización.</p>
         <div class="card-meta"><span class="chip">40 a 60 min</span><span class="chip">Garantía 8 días</span></div>
@@ -277,6 +278,7 @@
 
       <div class="card reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+        <img class="svc-foto" src="img/svc-software.jpg" alt="Primer plano de un teclado de computador iluminado." width="760" height="420" loading="lazy" decoding="async">
         <h3>Solo software</h3>
         <p>Sin abrir el equipo: limpieza lógica, quitar basura, optimización de arranque, actualizaciones y antivirus.</p>
         <div class="card-meta"><span class="chip">30 a 40 min</span><span class="chip">Sin abrir el equipo</span></div>
@@ -306,111 +308,11 @@
          destapado es de un portátil concreto -el de alguien- y aquí no hay
          ninguno que enseñar; el dibujo señala lo que hace falta señalar y
          no envejece con el modelo. -->
-    <div class="corte-par reveal">
-    <figure class="corte-foto">
+    <figure class="corte-foto solo">
       <img src="img/placa-desmontada.jpg" alt="Un portátil destapado por debajo: la batería arriba, la placa azul en el medio y los dos ventiladores unidos por los tubos de cobre del disipador."
            width="1400" height="1050" loading="lazy" decoding="async">
-      <figcaption>Así se ve cuando sale la tapa.</figcaption>
+      <figcaption>Así se ve cuando sale la tapa. Abajo, lo que pasa ahí dentro.</figcaption>
     </figure>
-    <figure class="corte">
-      <svg viewBox="0 0 900 400" role="img"
-           aria-labelledby="corte-t corte-d">
-        <title id="corte-t">Corte de un portátil por dentro</title>
-        <desc id="corte-d">El ventilador, el disipador con la pasta térmica sobre el
-          procesador, el disco y la batería: las cuatro piezas que se tocan en un
-          mantenimiento.</desc>
-
-        <!-- La tapa de abajo, que es la que se quita -->
-        <rect x="42" y="54" width="816" height="300" rx="22" fill="#12222C" stroke="#24404E" stroke-width="2"/>
-        <rect x="66" y="78" width="768" height="252" rx="14" fill="#0E1A22" stroke="#1E3642" stroke-width="1.5"/>
-
-        <!-- Los tornillos de la tapa: son los primeros que salen -->
-        <g fill="#24404E">
-          <circle cx="60" cy="72" r="4"/><circle cx="840" cy="72" r="4"/>
-          <circle cx="60" cy="336" r="4"/><circle cx="840" cy="336" r="4"/>
-        </g>
-
-        <!-- La batería: la pieza más grande y la que más envejece -->
-        <g>
-          <rect x="96" y="212" width="286" height="96" rx="10" fill="#162A35" stroke="#2A4A5A" stroke-width="1.5"/>
-          <rect x="112" y="228" width="78" height="64" rx="6" fill="#1C3542"/>
-          <rect x="200" y="228" width="78" height="64" rx="6" fill="#1C3542"/>
-          <rect x="288" y="228" width="78" height="64" rx="6" fill="#1C3542"/>
-        </g>
-
-        <!-- El disco -->
-        <rect x="96" y="106" width="180" height="82" rx="9" fill="#162A35" stroke="#2A4A5A" stroke-width="1.5"/>
-        <circle cx="186" cy="147" r="27" fill="none" stroke="#2A4A5A" stroke-width="1.5"/>
-        <circle cx="186" cy="147" r="6" fill="#2A4A5A"/>
-
-        <!-- La RAM, en su ranura -->
-        <rect x="300" y="112" width="160" height="26" rx="5" fill="#162A35" stroke="#2A4A5A" stroke-width="1.5"/>
-        <rect x="300" y="150" width="160" height="26" rx="5" fill="#162A35" stroke="#2A4A5A" stroke-width="1.5"/>
-
-        <!-- El procesador con la pasta: el ámbar es el calor que se saca.
-             Es el único sitio de la página donde se usa, porque es el único
-             que de verdad quema. -->
-        <rect x="496" y="196" width="96" height="96" rx="8" fill="#1C3542" stroke="#2A4A5A" stroke-width="1.5"/>
-        <rect x="516" y="216" width="56" height="56" rx="4" fill="#E8823A" opacity=".82"/>
-        <rect x="524" y="224" width="40" height="40" rx="3" fill="#F0A268" opacity=".9"/>
-
-        <!-- El disipador: el tubo que lleva el calor del procesador al ventilador -->
-        <path d="M544 216 L544 150 Q544 128 566 128 L676 128"
-              fill="none" stroke="#12B8A6" stroke-width="15" stroke-linecap="round" opacity=".55"/>
-        <path d="M544 216 L544 150 Q544 128 566 128 L676 128"
-              fill="none" stroke="#12B8A6" stroke-width="5" stroke-linecap="round"/>
-        <g stroke="#2A4A5A" stroke-width="2">
-          <path d="M600 108v40M616 108v40M632 108v40M648 108v40M664 108v40"/>
-        </g>
-
-        <!-- El ventilador, que es lo que se atasca de polvo -->
-        <circle cx="722" cy="212" r="72" fill="#162A35" stroke="#2A4A5A" stroke-width="1.5"/>
-        <circle cx="722" cy="212" r="58" fill="#0E1A22" stroke="#24404E" stroke-width="1.5"/>
-        <g fill="none" stroke="#12B8A6" stroke-width="4" stroke-linecap="round" opacity=".85">
-          <path d="M722 212 C742 190 754 186 762 194 C744 198 736 204 722 212"/>
-          <path d="M722 212 C744 232 748 244 740 252 C736 234 730 226 722 212"/>
-          <path d="M722 212 C700 234 688 238 680 230 C698 226 706 220 722 212"/>
-          <path d="M722 212 C700 192 696 180 704 172 C708 190 714 198 722 212"/>
-        </g>
-        <circle cx="722" cy="212" r="11" fill="#12B8A6"/>
-
-        <!-- La rejilla por donde sale el aire caliente -->
-        <g stroke="#24404E" stroke-width="4" stroke-linecap="round">
-          <path d="M806 176v72M818 176v72M830 176v72"/>
-        </g>
-
-        <!-- Las llamadas. Cada una apunta a su pieza con una línea fina,
-             porque un dibujo sin nombres no dice cuál es cuál. -->
-        <g class="corte-llamada">
-          <path d="M186 106 L186 74" />
-          <text x="186" y="62" text-anchor="middle">Disco</text>
-        </g>
-        <!-- La memoria sale por arriba, no por el costado: hacia la derecha la
-             etiqueta caia justo encima del disipador y del procesador. -->
-        <g class="corte-llamada">
-          <path d="M380 112 L380 74" />
-          <text x="380" y="62" text-anchor="middle">Memoria</text>
-        </g>
-        <g class="corte-llamada">
-          <path d="M239 308 L239 344" />
-          <text x="239" y="362" text-anchor="middle">Batería</text>
-        </g>
-        <g class="corte-llamada corte-llamada--calor">
-          <path d="M544 292 L544 344" />
-          <text x="544" y="362" text-anchor="middle">Procesador y pasta térmica</text>
-        </g>
-        <g class="corte-llamada">
-          <path d="M722 140 L722 74" />
-          <text x="722" y="62" text-anchor="middle">Ventilador y disipador</text>
-        </g>
-      </svg>
-      <figcaption>
-        Esto es lo que hay debajo de la tapa. El polvo se acumula en el ventilador
-        y en las aletas del disipador, y la pasta del procesador se seca con los
-        años: por ahí se va la temperatura, y con ella la velocidad.
-      </figcaption>
-    </figure>
-    </div>
 
     <ul class="checks">
       <li class="reveal"><b>Limpieza interna</b><span>Ventiladores, disipador y tarjeta, con aire y herramienta antiestática.</span></li>
@@ -420,6 +322,140 @@
       <li class="reveal"><b>Chequeo de salud</b><span>Estado del disco, la batería y las temperaturas, con lo que te recomiendo hacer.</span></li>
       <li class="reveal"><b>Informe al entregar</b><span>Te cuento qué encontré y qué hice, sin tecnicismos.</span></li>
     </ul>
+  </div>
+</section>
+
+<!-- ── LA SECUENCIA ─────────────────────────────────────────────────
+     La hora de mantenimiento, cuadro a cuadro, y la que manda es la rueda
+     del ratón: la sección se queda quieta mientras se scrollea y el dibujo
+     avanza de paso en paso. Es lo que el dueño del equipo no ve nunca,
+     porque pasa con la tapa fuera y él no está delante.
+
+     Los seis cuadros comparten el mismo chasis dibujado; lo que cambia es
+     qué capas se ven. Así no hay seis dibujos que se contradigan entre
+     ellos cuando uno se retoca, que es lo que pasa con una animación hecha
+     de seis imágenes sueltas. -->
+<section id="mantenimiento" class="secuencia" aria-labelledby="secuencia-h">
+  <div class="secuencia-alto">
+    <div class="secuencia-fija">
+      <div class="wrap secuencia-cuerpo">
+
+        <div class="secuencia-texto">
+          <span class="eyebrow">La hora que no ves</span>
+          <h2 id="secuencia-h">Qué le pasa a tu equipo mientras esperas.</h2>
+
+          <ol class="secuencia-pasos">
+            <li data-paso="0"><b>Llega y se abre</b><span>Salen los tornillos de la tapa, con la punta que le corresponde a cada uno.</span></li>
+            <li data-paso="1"><b>Fuera la tapa</b><span>Aparece lo de adentro: ventiladores, disipador, disco y batería.</span></li>
+            <li data-paso="2"><b>Ahí está el problema</b><span>El polvo tapa las aletas del disipador. El aire caliente deja de salir.</span></li>
+            <li data-paso="3"><b>Limpieza</b><span>Aire a presión y pincel antiestático, ventilador por ventilador.</span></li>
+            <li data-paso="4"><b>Pasta térmica nueva</b><span>Se retira la vieja, que ya está seca, y se aplica pasta fresca al procesador.</span></li>
+            <li data-paso="5"><b>Se cierra y se prueba</b><span>Vuelve la tapa, enciende, y se mira la temperatura con el equipo trabajando.</span></li>
+          </ol>
+
+          <p class="secuencia-pie">Entre 40 y 60 minutos. Te lo devuelvo encendido y te cuento qué encontré.</p>
+        </div>
+
+        <div class="secuencia-lienzo">
+          <div class="secuencia-rail" aria-hidden="true"><span></span></div>
+
+          <svg viewBox="0 0 620 460" class="maq" role="img" aria-labelledby="maq-t maq-d">
+            <title id="maq-t">Un mantenimiento, paso a paso</title>
+            <desc id="maq-d">El portátil se destapa, se le quita el polvo del disipador y los
+              ventiladores, se le cambia la pasta térmica del procesador y se cierra otra vez.</desc>
+
+            <!-- El chasis, que está en los seis cuadros -->
+            <rect x="40" y="40" width="540" height="380" rx="26" fill="#12222C" stroke="#24404E" stroke-width="2"/>
+            <rect x="62" y="62" width="496" height="336" rx="18" fill="#0E1A22" stroke="#1E3642" stroke-width="1.5"/>
+
+            <!-- Lo de adentro: aparece cuando sale la tapa -->
+            <g class="capa adentro">
+              <rect x="88" y="250" width="230" height="110" rx="12" fill="#162A35" stroke="#2A4A5A" stroke-width="1.5"/>
+              <rect x="104" y="266" width="60" height="78" rx="6" fill="#1C3542"/>
+              <rect x="172" y="266" width="60" height="78" rx="6" fill="#1C3542"/>
+              <rect x="240" y="266" width="62" height="78" rx="6" fill="#1C3542"/>
+              <rect x="88" y="96" width="150" height="76" rx="10" fill="#162A35" stroke="#2A4A5A" stroke-width="1.5"/>
+              <circle cx="163" cy="134" r="24" fill="none" stroke="#2A4A5A" stroke-width="1.5"/>
+              <rect x="258" y="100" width="132" height="24" rx="5" fill="#162A35" stroke="#2A4A5A" stroke-width="1.5"/>
+              <rect x="258" y="136" width="132" height="24" rx="5" fill="#162A35" stroke="#2A4A5A" stroke-width="1.5"/>
+
+              <!-- El disipador: el tubo que va del procesador al ventilador -->
+              <path d="M372 250 L372 190 Q372 172 390 172 L470 172" fill="none" stroke="#12B8A6" stroke-width="14" stroke-linecap="round" opacity=".5"/>
+              <path d="M372 250 L372 190 Q372 172 390 172 L470 172" fill="none" stroke="#12B8A6" stroke-width="5" stroke-linecap="round"/>
+              <g class="aletas" stroke="#2A4A5A" stroke-width="2">
+                <path d="M408 154v36M422 154v36M436 154v36M450 154v36M464 154v36"/>
+              </g>
+
+              <!-- El ventilador -->
+              <circle cx="470" cy="250" r="62" fill="#162A35" stroke="#2A4A5A" stroke-width="1.5"/>
+              <circle cx="470" cy="250" r="50" fill="#0E1A22" stroke="#24404E" stroke-width="1.5"/>
+              <g class="aspas" fill="none" stroke="#12B8A6" stroke-width="4" stroke-linecap="round" opacity=".85">
+                <path d="M470 250 C487 231 497 228 504 235 C489 238 482 243 470 250"/>
+                <path d="M470 250 C489 267 492 277 485 284 C482 268 477 261 470 250"/>
+                <path d="M470 250 C451 269 441 272 434 265 C450 262 457 257 470 250"/>
+                <path d="M470 250 C451 233 448 223 455 216 C458 232 463 239 470 250"/>
+              </g>
+              <circle cx="470" cy="250" r="10" fill="#12B8A6"/>
+
+              <!-- El procesador y su pasta -->
+              <rect x="336" y="250" width="72" height="72" rx="8" fill="#1C3542" stroke="#2A4A5A" stroke-width="1.5"/>
+              <g class="pasta-vieja">
+                <rect x="352" y="266" width="40" height="40" rx="4" fill="#7E7468"/>
+                <g stroke="#5E564C" stroke-width="1.6" fill="none">
+                  <path d="M356 276h14l6 8-8 10M382 270l-6 12 10 6M360 296l8-4"/>
+                </g>
+              </g>
+              <g class="pasta-nueva">
+                <rect x="352" y="266" width="40" height="40" rx="4" fill="#C9D6DA"/>
+                <circle cx="372" cy="286" r="9" fill="#E8EFF1"/>
+              </g>
+            </g>
+
+            <!-- El polvo: se ve en cuanto se abre y se va con la limpieza -->
+            <g class="capa polvo" fill="#8A7F6E">
+              <circle cx="415" cy="160" r="4"/><circle cx="429" cy="176" r="3.2"/>
+              <circle cx="443" cy="158" r="3.6"/><circle cx="457" cy="178" r="4.2"/>
+              <circle cx="466" cy="160" r="3"/><circle cx="436" cy="192" r="3.4"/>
+              <circle cx="452" cy="222" r="4"/><circle cx="488" cy="228" r="3.4"/>
+              <circle cx="500" cy="262" r="4.4"/><circle cx="482" cy="290" r="3.6"/>
+              <circle cx="446" cy="284" r="3"/><circle cx="430" cy="246" r="3.8"/>
+              <circle cx="398" cy="176" r="3"/><circle cx="470" cy="200" r="3.2"/>
+            </g>
+
+            <!-- La tapa, que sale en el cuadro 2 y vuelve en el 6 -->
+            <g class="capa tapa">
+              <rect x="62" y="62" width="496" height="336" rx="18" fill="#162934" stroke="#2A4A5A" stroke-width="2"/>
+              <rect x="150" y="120" width="320" height="14" rx="7" fill="#1E3642"/>
+              <rect x="150" y="152" width="220" height="14" rx="7" fill="#1E3642"/>
+              <g fill="#223E4C">
+                <rect x="150" y="250" width="150" height="90" rx="10"/>
+                <rect x="330" y="250" width="140" height="90" rx="10"/>
+              </g>
+            </g>
+
+            <!-- Los tornillos: salen en el cuadro 1 -->
+            <g class="capa tornillos" fill="#3C5C6B">
+              <circle class="t" cx="86" cy="86" r="7"/>
+              <circle class="t" cx="534" cy="86" r="7"/>
+              <circle class="t" cx="86" cy="374" r="7"/>
+              <circle class="t" cx="534" cy="374" r="7"/>
+              <circle class="t" cx="310" cy="86" r="7"/>
+              <circle class="t" cx="310" cy="374" r="7"/>
+            </g>
+
+            <!-- El termómetro, que baja cuando el trabajo está hecho -->
+            <g class="capa termo">
+              <rect x="404" y="352" width="152" height="46" rx="14" fill="#0B161D" stroke="#24404E" stroke-width="1.5"/>
+              <text class="termo-num termo-antes" x="480" y="383" text-anchor="middle">86°C</text>
+              <text class="termo-num termo-despues" x="480" y="383" text-anchor="middle">54°C</text>
+            </g>
+          </svg>
+
+          <p class="secuencia-nota" aria-hidden="true">Sigue bajando</p>
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
 
@@ -467,122 +503,6 @@
   </div>
 </section>
 
-<!-- ── TARJETA ─────────────────────────────────────────────────────
-     La tarjeta se arma aquí mismo, en vivo. El vecino se guarda el
-     contacto; yo la imprimo a tamaño real desde esta misma sección. -->
-<section id="tarjeta">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Mi tarjeta</span>
-      <h2>Llévate mi contacto.</h2>
-      <p>Guárdala en el teléfono o escanea el código y me escribes directo. Sin buscar el número después.</p>
-    </div>
-
-    <div class="tarjeta-grid">
-
-      <div class="card-stage reveal">
-        <div class="bcard" id="bcard">
-          <!-- FRENTE -->
-          <div class="bcard__face bcard__front">
-            <div class="bc-top">
-              <svg class="bc-logo" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="#12B8A6" stroke-width="11" stroke-linecap="round"><path d="M71.6 28.1 A34 34 0 1 1 48.4 28.1"/><line x1="60" y1="20" x2="60" y2="54"/></g></svg>
-              <div>
-                <div class="bc-wordmark">Reinicia</div>
-                <div class="bc-kicker">Mantenimiento de PC</div>
-              </div>
-            </div>
-            <div class="bc-tagline">Tu computador rápido y fresco otra vez.</div>
-            <div class="bc-bottom">
-              <span class="bc-bar"></span>
-              <div>
-                <b>Kevin Gonzalez</b>
-                <span>Ingeniero de sistemas</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- REVERSO -->
-          <div class="bcard__face bcard__back">
-            <div class="bc-left">
-              <div class="bc-brand">
-                <svg class="bc-logo-sm" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="#12B8A6" stroke-width="11" stroke-linecap="round"><path d="M71.6 28.1 A34 34 0 1 1 48.4 28.1"/><line x1="60" y1="20" x2="60" y2="54"/></g></svg>
-                <span class="bc-name">Reinicia</span>
-              </div>
-              <div class="bc-svc">
-                <div class="bc-row"><span>Mantenimiento portátil</span></div>
-                <div class="bc-row"><span>Torre / escritorio</span></div>
-                <div class="bc-row"><span>Solo software</span></div>
-                <div class="bc-row bc-row--nota"><span>Te digo el valor antes de tocar nada</span></div>
-              </div>
-              <div class="bc-badges">
-                <span class="bc-badge" id="bcTorre">Aquí en tu conjunto</span>
-                <span class="bc-badge">Garantía 8 días</span>
-              </div>
-            </div>
-            <div class="bc-right">
-              <div class="bc-qr" id="bcQr"><span class="bc-qr-ph">QR a WhatsApp</span></div>
-              <div class="bc-contact">
-                <div class="bc-wa">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2z"/></svg>
-                  <span id="bcNumber">kgagudelo@gmail.com</span>
-                </div>
-                <div class="bc-url">reinicia.kgstudio.top</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-actions">
-          <button type="button" class="chip-btn" id="flipBtn" aria-pressed="false">Ver el reverso</button>
-        </div>
-      </div>
-
-      <div class="tarjeta-side reveal">
-        <a class="btn-primary" id="saveVcf" href="#" download="Kevin Gonzalez - Reinicia.vcf">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>
-          Guardar en mis contactos
-        </a>
-        <p class="tarjeta-note">Se descarga un archivo de contacto que el teléfono abre solo. Queda con mi nombre, el WhatsApp y la dirección de esta página.</p>
-
-        <a class="btn-ghost" data-wa data-msg="Hola Kevin, vi tu tarjeta y quiero un mantenimiento.">Mejor escríbeme ahora</a>
-
-        <details class="tarjeta-print">
-          <summary>Soy Kevin, quiero imprimirlas</summary>
-          <p>Se imprimen a tamaño real (90 × 55 mm), frente y reverso en páginas separadas. Para litografía, exporta a PDF y pide 3 mm de sangrado.</p>
-          <button type="button" class="chip-btn" id="printBtn">Imprimir / Guardar PDF</button>
-          <p class="tarjeta-hint" id="editHint">Para cambiar el número o la torre, abre esta página con <code>?editar</code> al final.</p>
-          <p class="tarjeta-hint">Lo publicado sale de <code>datos.js</code>.</p>
-        </details>
-      </div>
-
-    </div>
-
-    <!-- Editor: solo aparece con ?editar en la URL. -->
-    <form class="editor" id="editor" hidden>
-      <p class="editor__title">Datos de la tarjeta</p>
-      <div class="editor__fields">
-        <label>
-          <span>WhatsApp</span>
-          <input type="tel" id="inTel" inputmode="numeric" placeholder="3001234567" autocomplete="off">
-          <em>Solo el celular, 10 dígitos. El 57 se agrega solo.</em>
-        </label>
-        <label>
-          <span>Torre</span>
-          <input type="text" id="inTorre" placeholder="4" autocomplete="off">
-          <em>Aparece en la tarjeta y en la sección de confianza.</em>
-        </label>
-      </div>
-      <p class="editor__warn">
-        Esto cambia lo que ves <strong>en este navegador</strong>, para que puedas imprimir ya.
-        Para que quede publicado hay que pegar esta línea en <code>datos.js</code>:
-      </p>
-      <div class="editor__code">
-        <code id="codeLine">whatsapp: '57XXXXXXXXXX',</code>
-        <button type="button" class="chip-btn" id="copyCode">Copiar</button>
-      </div>
-    </form>
-  </div>
-</section>
 
 <!-- CONFIANZA -->
 <section id="confianza">
@@ -652,7 +572,6 @@
       <a href="#servicios">Servicios</a>
       <a href="#incluye">Qué incluye</a>
       <a href="#jornada">Jornada</a>
-      <a href="#tarjeta">Mi tarjeta</a>
       <a href="#contacto">Contacto</a>
     </div>
     <!-- La dirección va escrita tal cual está en la ficha de Google Maps.
@@ -669,7 +588,6 @@
 </footer>
 
 <script src="datos.js" defer></script>
-<script src="qrcode.js" defer></script>
 <script src="main.js" defer></script>
 </body>
 </html>

@@ -5,25 +5,16 @@
 // Los datos viven en datos.js, que también carga la hoja de tarjetas.
 const D = window.REINICIA;
 
-/* ── Estado editable ──────────────────────────────────────────
+/*
+ * El numero y la torre salen de datos.js y de ningun otro sitio.
  *
- * Con `?editar` puedo cambiar número y torre desde el navegador para
- * imprimir tarjetas ya mismo. Se guarda en este equipo, NO en el sitio:
- * lo publicado sigue siendo lo que diga datos.js. El aviso del formulario
- * lo dice, y por eso muestra la línea exacta que hay que pegar.
+ * Antes se podian sobreescribir desde localStorage, para que el editor de
+ * ?editar dejara ver el cambio antes de publicarlo. El editor se fue con la
+ * tarjeta, asi que ya nadie escribe esa clave; leerla solo dejaba una mina:
+ * un valor viejo guardado en un navegador seguiria pisando a datos.js para
+ * siempre, y en el navegador de Kevin, que es el unico que lo uso.
  */
-const GUARDADO = 'reinicia:tarjeta';
-
-function leerEstado() {
-  const base = { whatsapp: D.whatsapp, torre: D.torre };
-  try {
-    return Object.assign(base, JSON.parse(localStorage.getItem(GUARDADO) || '{}'));
-  } catch {
-    return base;
-  }
-}
-
-let estado = leerEstado();
+const estado = { whatsapp: D.whatsapp, torre: D.torre };
 
 const hayNumero = () => D.numeroValido(estado.whatsapp);
 
@@ -143,148 +134,23 @@ function textoTorre() {
   return estado.torre ? `en la torre ${estado.torre}` : 'en el conjunto';
 }
 
-/** El contacto que se imprime en el reverso. */
-function pintarDatosTarjeta() {
-  const numero = D.numeroLegible(estado.whatsapp);
-  const bcNumber = el('bcNumber');
-  const bcWa = document.querySelector('.bc-wa');
-
-  if (bcNumber) bcNumber.textContent = numero || D.correo;
-  // Sin número, el glifo de WhatsApp mentiría sobre por dónde escribir.
-  if (bcWa) bcWa.classList.toggle('correo', !numero);
-
-  const badge = el('bcTorre');
-  if (badge) badge.textContent = estado.torre ? `Torre ${estado.torre} · aquí mismo` : 'Aquí en tu conjunto';
-
+/*
+ * La torre del vecino, que se nombra en la seccion de confianza. Lo unico
+ * que sobrevive de lo que pintaba la tarjeta: el resto -el reverso, el QR,
+ * el archivo de contacto y el editor de ?editar- se fue con ella.
+ *
+ * El numero y la torre siguen saliendo de datos.js, que es donde se cambian
+ * para que queden publicados. Las tarjetas se imprimen desde tarjetas.html,
+ * que tiene sus propios estilos y no depende de esta pagina.
+ */
+function pintarTorre() {
   const torre = el('torreTexto');
   if (torre) torre.textContent = textoTorre();
 }
 
-/**
- * El QR apunta a WhatsApp si hay número y, si no, a esta misma página:
- * un código que no lleva a ninguna parte es peor que uno que lleva al
- * sitio, donde igual está el contacto.
- */
-function pintarQR() {
-  const caja = el('bcQr');
-  if (!caja || typeof QRCode === 'undefined') return;
-
-  const destino = hayNumero()
-    ? enlaceContacto('Hola Kevin, quiero un mantenimiento.')
-    : `https://${D.sitio}/`;
-
-  caja.innerHTML = '';
-  try {
-    new QRCode(caja, {
-      text: destino,
-      width: 320,
-      height: 320,
-      colorDark: '#0E1A22',
-      colorLight: '#ffffff',
-      correctLevel: QRCode.CorrectLevel.M,
-    });
-  } catch {
-    caja.innerHTML = '<span class="bc-qr-ph">QR no disponible</span>';
-  }
-}
-
-/** Archivo de contacto que el teléfono abre solo. */
-function pintarVcf() {
-  const boton = el('saveVcf');
-  if (!boton) return;
-
-  const lineas = [
-    'BEGIN:VCARD',
-    'VERSION:3.0',
-    'N:Gonzalez;Kevin;;;',
-    'FN:Kevin Gonzalez',
-    'ORG:Reinicia - kgstudio',
-    'TITLE:Ingeniero de sistemas',
-  ];
-  if (hayNumero()) lineas.push(`TEL;TYPE=CELL:+${estado.whatsapp}`);
-  lineas.push(
-    `EMAIL;TYPE=INTERNET:${D.correo}`,
-    `URL:https://${D.sitio}`,
-    `ADR;TYPE=WORK:;;${D.direccion};;;;Colombia`,
-    'NOTE:Mantenimiento de computadores. Limpieza, pasta térmica y optimización.',
-    'END:VCARD',
-  );
-
-  // Las líneas de un vCard van separadas por CRLF; con solo LF hay
-  // teléfonos que se niegan a importarlo.
-  const blob = new Blob([lineas.join('\r\n')], { type: 'text/vcard;charset=utf-8' });
-  if (boton.dataset.url) URL.revokeObjectURL(boton.dataset.url);
-  boton.dataset.url = URL.createObjectURL(blob);
-  boton.href = boton.dataset.url;
-}
-
 function pintarTodo() {
   pintarContacto();
-  pintarDatosTarjeta();
-  pintarQR();
-  pintarVcf();
-}
-
-/* ── Voltear la tarjeta ───────────────────────────────────── */
-
-const bcard = el('bcard');
-const flipBtn = el('flipBtn');
-
-if (bcard && flipBtn) {
-  flipBtn.addEventListener('click', () => {
-    const alReverso = !bcard.classList.contains('flipped');
-    bcard.classList.toggle('flipped', alReverso);
-    flipBtn.textContent = alReverso ? 'Ver el frente' : 'Ver el reverso';
-    flipBtn.setAttribute('aria-pressed', String(alReverso));
-  });
-}
-
-/* ── Editor (?editar) ─────────────────────────────────────── */
-
-const editor = el('editor');
-
-if (editor && new URLSearchParams(location.search).has('editar')) {
-  editor.hidden = false;
-
-  const inTel = el('inTel');
-  const inTorre = el('inTorre');
-  const codeLine = el('codeLine');
-
-  inTel.value = (estado.whatsapp || '').replace(/^57/, '').replace(/X/g, '');
-  inTorre.value = estado.torre || '';
-
-  function aplicar() {
-    const digitos = inTel.value.replace(/\D/g, '').slice(0, 10);
-    estado = {
-      whatsapp: digitos.length === 10 ? `57${digitos}` : D.whatsapp,
-      torre: inTorre.value.trim(),
-    };
-    localStorage.setItem(GUARDADO, JSON.stringify(estado));
-    codeLine.textContent = `whatsapp: '${estado.whatsapp}',`;
-    pintarTodo();
-  }
-
-  editor.addEventListener('input', aplicar);
-  editor.addEventListener('submit', (e) => e.preventDefault());
-  aplicar();
-
-  const copyCode = el('copyCode');
-  copyCode.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(codeLine.textContent);
-      copyCode.textContent = 'Copiado';
-      setTimeout(() => { copyCode.textContent = 'Copiar'; }, 1600);
-    } catch {
-      copyCode.textContent = 'Cópialo a mano';
-    }
-  });
-}
-
-// Las tarjetas se imprimen desde su propia hoja, que ya está a tamaño
-// real; imprimir esta página sacaría la landing entera.
-const printBtn = el('printBtn');
-if (printBtn) {
-  printBtn.addEventListener('click', () => window.open('tarjetas.html', '_blank', 'noopener'));
+  pintarTorre();
 }
 
 pintarTodo();
@@ -306,3 +172,67 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
   reveals.forEach((n) => io.observe(n));
 }
+
+/* ── La secuencia con scroll ──────────────────────────────────────
+ *
+ * Traduce lo que se ha scrolleado dentro de la seccion en un numero de
+ * cuadro, y lo escribe en un atributo. Todo lo que se ve -que salga la
+ * tapa, que se vaya el polvo, que gire el ventilador- lo decide el CSS a
+ * partir de ese atributo.
+ *
+ * Se hace asi y no pintando a mano en cada evento de scroll por dos
+ * razones. Una, que el navegador anima las transiciones mejor de lo que
+ * las animaria un bucle en JavaScript. Y dos, que el estado de la seccion
+ * es UN dato que se puede leer en el inspector, en vez de estar repartido
+ * entre veinte estilos en linea.
+ */
+(function secuencia() {
+  const seccion = document.getElementById('mantenimiento');
+  if (!seccion) return;
+
+  const alto = seccion.querySelector('.secuencia-alto');
+  const pasos = [...seccion.querySelectorAll('.secuencia-pasos li')];
+  const CUADROS = pasos.length;
+
+  // Con movimiento reducido la seccion no se pega ni avanza: el CSS ya la
+  // deja como una lista de pasos con el equipo abierto. Escribir el cuadro
+  // aqui la volveria a mover.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let pedido = false;
+
+  function pintar() {
+    pedido = false;
+    const caja = alto.getBoundingClientRect();
+    const recorrido = alto.offsetHeight - window.innerHeight;
+    if (recorrido <= 0) return;
+
+    // 0 cuando la seccion toca el borde de arriba, 1 cuando termina
+    const avance = Math.min(1, Math.max(0, -caja.top / recorrido));
+
+    /*
+     * El ultimo cuadro necesita su propio tramo de scroll o pasaria en un
+     * pixel: por eso se reparte en CUADROS tramos y no en CUADROS - 1.
+     */
+    const cuadro = Math.min(CUADROS - 1, Math.floor(avance * CUADROS));
+
+    if (seccion.dataset.paso !== String(cuadro)) {
+      seccion.dataset.paso = String(cuadro);
+      pasos.forEach((li, i) => {
+        li.classList.toggle('activo', i === cuadro);
+        li.classList.toggle('hecho', i < cuadro);
+      });
+    }
+    seccion.style.setProperty('--avance', avance.toFixed(3));
+  }
+
+  function pedir() {
+    if (pedido) return;
+    pedido = true;
+    requestAnimationFrame(pintar);
+  }
+
+  addEventListener('scroll', pedir, { passive: true });
+  addEventListener('resize', pedir);
+  pintar();
+})();

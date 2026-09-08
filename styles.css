@@ -270,120 +270,6 @@ section{padding:72px 0}
 .signoff-link a{color:var(--teal-deep);font-weight:600}
 .signoff-link a:hover{text-decoration:underline}
 
-/* ---------- tarjeta de presentación ----------
-   La tarjeta se dibuja a proporción real (90 × 55 mm) y todo lo que lleva
-   dentro se mide en `cqw`, o sea en porcentaje de su propio ancho. Así el
-   mismo marcado sirve para la miniatura del móvil y para la hoja de
-   impresión sin una sola media query: la tarjeta se escala entera, como
-   una foto, en vez de descuadrarse tipo por tipo. */
-.tarjeta-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start}
-
-.card-stage{container-type:inline-size;perspective:1600px}
-.bcard{
-  position:relative;width:100%;aspect-ratio:90/55;
-  transform-style:preserve-3d;
-  transition:transform .75s cubic-bezier(.2,.7,.2,1);
-}
-.bcard.flipped{transform:rotateY(180deg)}
-.bcard__face{
-  position:absolute;inset:0;
-  backface-visibility:hidden;-webkit-backface-visibility:hidden;
-  border-radius:3.2cqw;padding:6.4cqw;overflow:hidden;
-  box-shadow:var(--shadow);
-}
-
-/* Frente: la marca y quién la respalda. Nada más. */
-.bcard__front{background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:space-between}
-.bc-top{display:flex;align-items:center;gap:3cqw}
-.bc-logo{width:9.5cqw;height:9.5cqw;flex:none}
-.bc-wordmark{font-family:'Bricolage Grotesque';font-weight:800;font-size:6.6cqw;letter-spacing:-.02em;line-height:1}
-.bc-kicker{font-family:'JetBrains Mono',monospace;font-size:2.4cqw;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-top:.6cqw}
-.bc-tagline{font-family:'Bricolage Grotesque';font-weight:600;font-size:4.4cqw;line-height:1.25;color:#DCE7E9;max-width:62cqw}
-.bc-bottom{display:flex;align-items:center;gap:3cqw}
-.bc-bar{width:1.1cqw;height:8cqw;border-radius:999px;background:var(--teal);flex:none}
-.bc-bottom b{display:block;font-family:'Bricolage Grotesque';font-weight:700;font-size:4cqw;line-height:1.2}
-.bc-bottom span{display:block;font-family:'JetBrains Mono',monospace;font-size:2.5cqw;color:#8FA6AB;letter-spacing:.04em}
-
-/* Reverso: lo que el vecino necesita para decidir y para escribir. */
-.bcard__back{
-  transform:rotateY(180deg);
-  background:var(--surface);border:1px solid var(--line);
-  display:grid;grid-template-columns:1fr auto;gap:5cqw;align-items:stretch;
-}
-.bc-left{display:flex;flex-direction:column;justify-content:space-between;min-width:0}
-.bc-brand{display:flex;align-items:center;gap:2.2cqw}
-.bc-logo-sm{width:6cqw;height:6cqw;flex:none}
-.bc-name{font-family:'Bricolage Grotesque';font-weight:800;font-size:4.6cqw;letter-spacing:-.02em}
-.bc-svc{display:flex;flex-direction:column;gap:1.4cqw;margin:1cqw 0}
-.bc-row{display:flex;align-items:baseline;justify-content:space-between;gap:2cqw;font-size:3cqw;color:var(--ink-soft)}
-.bc-row b{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--ink);flex:none}
-.bc-badges{display:flex;flex-wrap:wrap;gap:1.6cqw}
-.bc-badge{
-  font-family:'JetBrains Mono',monospace;font-size:2.3cqw;letter-spacing:.04em;
-  background:var(--teal-wash);color:var(--teal-deep);
-  padding:1.1cqw 2.2cqw;border-radius:999px;
-}
-.bc-right{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:2.4cqw;flex:none}
-.bc-qr{
-  width:27cqw;height:27cqw;flex:none;
-  background:#fff;border:1px solid var(--line);border-radius:2cqw;
-  display:grid;place-items:center;overflow:hidden;padding:1.2cqw;
-}
-/* La librería inyecta un canvas y una img; que ocupen el cuadro entero. */
-.bc-qr canvas,.bc-qr img{width:100%!important;height:100%!important;display:block}
-.bc-qr-ph{font-family:'JetBrains Mono',monospace;font-size:2.1cqw;color:var(--muted);text-align:center;line-height:1.3;padding:1cqw}
-.bc-contact{text-align:center}
-.bc-wa{display:flex;align-items:center;justify-content:center;gap:1.4cqw;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:3cqw;color:var(--ink)}
-.bc-wa svg{width:3.4cqw;height:3.4cqw;flex:none;fill:var(--teal-deep)}
-/* Sin número la tarjeta muestra el correo, y el glifo de WhatsApp sobra:
-   dejarlo diría que se escribe por ahí. */
-.bc-wa.correo{font-size:2.5cqw;font-weight:500;color:var(--ink-soft);overflow-wrap:anywhere}
-.bc-wa.correo svg{display:none}
-.bc-url{font-family:'JetBrains Mono',monospace;font-size:2.3cqw;color:var(--muted);margin-top:.6cqw}
-
-.card-actions{display:flex;justify-content:center;margin-top:18px}
-.chip-btn{
-  font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.04em;
-  background:var(--surface);border:1.5px solid var(--line);color:var(--ink);
-  padding:9px 16px;border-radius:999px;cursor:pointer;
-  transition:border-color .18s ease,color .18s ease;
-}
-.chip-btn:hover{border-color:var(--teal);color:var(--teal-deep)}
-
-.tarjeta-side{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
-.tarjeta-side .btn-primary,.tarjeta-side .btn-ghost{width:100%;justify-content:center}
-.tarjeta-note{font-size:.88rem;color:var(--muted);line-height:1.55}
-.tarjeta-print{width:100%;border-top:1px dashed var(--line);padding-top:16px;margin-top:4px}
-.tarjeta-print summary{cursor:pointer;font-size:.88rem;font-weight:600;color:var(--teal-deep);list-style:none}
-.tarjeta-print summary::-webkit-details-marker{display:none}
-.tarjeta-print summary::before{content:"+ ";font-family:'JetBrains Mono',monospace}
-.tarjeta-print[open] summary::before{content:"− "}
-.tarjeta-print p{font-size:.85rem;color:var(--muted);margin:12px 0}
-.tarjeta-hint{font-size:.8rem}
-.tarjeta-hint code{font-family:'JetBrains Mono',monospace;background:var(--teal-wash);color:var(--teal-deep);padding:1px 6px;border-radius:5px}
-
-/* Editor: solo aparece con ?editar. Es una herramienta mía, no del visitante,
-   así que se ve como una consola y no como parte de la página. */
-.editor{
-  margin-top:36px;background:var(--surface);
-  border:1.5px dashed var(--line);border-radius:var(--radius);padding:24px;
-}
-.editor__title{font-family:'JetBrains Mono',monospace;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.editor__fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.editor__fields label{display:block}
-.editor__fields span{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
-.editor__fields input{
-  width:100%;font-family:'JetBrains Mono',monospace;font-size:.95rem;
-  padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;
-  background:var(--bg);color:var(--ink);
-}
-.editor__fields input:focus{outline:0;border-color:var(--teal)}
-.editor__fields em{display:block;font-style:normal;font-size:.76rem;color:var(--muted);margin-top:6px}
-.editor__warn{font-size:.85rem;color:var(--ink-soft);margin:18px 0 10px}
-.editor__warn code{font-family:'JetBrains Mono',monospace;background:var(--teal-wash);color:var(--teal-deep);padding:1px 6px;border-radius:5px}
-.editor__code{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--ink);border-radius:12px;padding:14px 16px}
-.editor__code code{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:#7FE3D6;flex:1;min-width:0;overflow-wrap:anywhere}
-
 /* ---------- preguntas ---------- */
 .faq{display:flex;flex-direction:column;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 .qa{background:var(--surface)}
@@ -431,15 +317,6 @@ footer{border-top:1px solid var(--line);padding:38px 0}
   .checks{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr}
   .trust-grid{grid-template-columns:1fr;gap:32px}
-  .tarjeta-grid{grid-template-columns:1fr;gap:34px}
-  /* Suelta, la tarjeta se estiraría a todo el ancho y perdería la escala de
-     objeto que la hace legible como tarjeta.
-
-     Se centra con `justify-self`, NO con `margin:0 auto`: los márgenes auto
-     anulan el estirado del grid y dejan al ítem a su tamaño de contenido, y
-     como `.card-stage` es contenedor de consultas su contenido no aporta
-     ancho - la tarjeta colapsaba a cero y desaparecía en móvil. */
-  .card-stage,.tarjeta-side{max-width:460px;width:100%;justify-self:center}
 }
 @media(max-width:560px){
   .wrap{padding:0 18px}
@@ -452,7 +329,6 @@ footer{border-top:1px solid var(--line);padding:38px 0}
   .nav-cta span{display:none}
   .nav-cta{padding:11px 13px}
   .jornada-inner .btn-primary{width:100%;justify-content:center}
-  .editor__fields{grid-template-columns:1fr}
   .qa summary{font-size:1rem;padding:17px 18px}
   .qa p{padding:0 18px 18px}
   .foot-inner{flex-direction:column;align-items:flex-start;gap:20px}
@@ -463,10 +339,6 @@ footer{border-top:1px solid var(--line);padding:38px 0}
   html{scroll-behavior:auto}
 }
 
-
-/* La nota del reverso de la tarjeta: no es un servicio mas de la lista, asi
-   que no se lee como uno. */
-.bc-row--nota{color:var(--muted);font-style:italic;padding-top:.6cqw}
 
 /* ── El corte del equipo ──────────────────────────────────────────────
    El dibujo de lo que hay debajo de la tapa, encima de la lista de lo
@@ -606,3 +478,183 @@ footer{border-top:1px solid var(--line);padding:38px 0}
   .jornada-lado{width:100%}
   .jornada-lado img{height:160px}
 }
+
+/* ── La secuencia con scroll ──────────────────────────────────────────
+   La sección mide seis pantallas de alto y lo de dentro se queda pegado
+   arriba, así que la rueda del ratón no baja la página: pasa el cuadro.
+   `--paso` lo escribe main.js.
+
+   Cada capa dice en qué cuadros se ve, y nada más. Las transiciones las
+   pone el navegador, así que no hay un bucle de animación pintando a mano
+   sesenta veces por segundo: solo un dato que cambia seis veces.          */
+
+.secuencia{padding:0;background:var(--bg)}
+.secuencia-alto{height:600vh}
+.secuencia-fija{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden}
+.secuencia-cuerpo{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:48px;
+  align-items:center;
+  width:100%;
+}
+
+.secuencia-texto h2{
+  font-family:'Bricolage Grotesque';font-weight:700;
+  font-size:clamp(1.7rem,3vw,2.4rem);letter-spacing:-.02em;line-height:1.1;
+  margin:12px 0 26px;
+}
+
+.secuencia-pasos{list-style:none;display:flex;flex-direction:column;gap:2px}
+.secuencia-pasos li{
+  padding:12px 0 12px 20px;
+  border-left:2px solid var(--line);
+  opacity:.32;
+  transition:opacity .35s ease,border-color .35s ease;
+}
+.secuencia-pasos li b{
+  display:block;font-family:'Bricolage Grotesque';font-weight:600;font-size:1.02rem;
+}
+/* La explicación de cada paso solo se lee cuando ese paso está pasando: con
+   las seis abiertas a la vez la columna era un muro de texto. */
+.secuencia-pasos li span{
+  display:block;color:var(--muted);font-size:.9rem;line-height:1.5;
+  max-height:0;overflow:hidden;opacity:0;
+  transition:max-height .35s ease,opacity .35s ease,margin .35s ease;
+}
+.secuencia-pasos li.activo{opacity:1;border-left-color:var(--teal)}
+.secuencia-pasos li.activo span{max-height:5em;opacity:1;margin-top:4px}
+.secuencia-pasos li.hecho{opacity:.6;border-left-color:var(--teal-deep)}
+
+.secuencia-pie{margin-top:24px;font-size:.86rem;color:var(--muted)}
+
+.secuencia-lienzo{position:relative;min-width:0}
+.maq{width:100%;height:auto;display:block;max-height:66vh}
+
+/* El riel: dice cuánto queda de secuencia, que en una sección pegada no se
+   puede saber mirando la barra del navegador. */
+.secuencia-rail{
+  position:absolute;left:-22px;top:8%;bottom:8%;width:3px;
+  background:var(--line);border-radius:999px;overflow:hidden;
+}
+.secuencia-rail span{
+  display:block;width:100%;height:calc(var(--avance,0) * 100%);
+  background:var(--teal);transition:height .18s linear;
+}
+
+.secuencia-nota{
+  text-align:center;margin-top:14px;color:var(--muted);
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  letter-spacing:.12em;text-transform:uppercase;
+  opacity:0;transition:opacity .3s ease;
+}
+/* Solo en el primer cuadro: despues ya se entendio que se scrollea */
+.secuencia[data-paso="0"] .secuencia-nota{opacity:1}
+
+/* ── Los seis cuadros ─────────────────────────────────────────────── */
+
+.capa{transition:opacity .45s ease,transform .45s ease}
+.maq .t{transition:transform .45s cubic-bezier(.34,1.4,.64,1)}
+
+/* La tapa: puesta en 0 y 1, fuera del 2 al 4, y vuelve en el 5 */
+.secuencia .tapa{opacity:1;transform:translateY(0)}
+.secuencia[data-paso="2"] .tapa,
+.secuencia[data-paso="3"] .tapa,
+.secuencia[data-paso="4"] .tapa{opacity:0;transform:translateY(-58px)}
+
+/* Lo de adentro solo se ve con la tapa fuera */
+.secuencia .adentro{opacity:0}
+.secuencia[data-paso="2"] .adentro,
+.secuencia[data-paso="3"] .adentro,
+.secuencia[data-paso="4"] .adentro,
+.secuencia[data-paso="5"] .adentro{opacity:1}
+
+/* Los tornillos se aflojan en el cuadro 1 y ya no vuelven a estorbar */
+.secuencia .tornillos{opacity:1}
+.secuencia[data-paso="1"] .t{transform:translate(0,-14px)}
+.secuencia[data-paso="2"] .tornillos,
+.secuencia[data-paso="3"] .tornillos,
+.secuencia[data-paso="4"] .tornillos{opacity:0}
+
+/* El polvo: es el hallazgo del cuadro 2 y se va en el 3 */
+.secuencia .polvo{opacity:0}
+.secuencia[data-paso="2"] .polvo{opacity:1}
+
+/* La pasta: la vieja hasta el 3, la nueva desde el 4 */
+.secuencia .pasta-vieja{opacity:1;transition:opacity .45s ease}
+.secuencia .pasta-nueva{opacity:0;transition:opacity .45s ease}
+.secuencia[data-paso="4"] .pasta-vieja,
+.secuencia[data-paso="5"] .pasta-vieja{opacity:0}
+.secuencia[data-paso="4"] .pasta-nueva,
+.secuencia[data-paso="5"] .pasta-nueva{opacity:1}
+
+/* El ventilador arranca cuando ya está limpio, y no antes: girando con el
+   polvo encima diría lo contrario de lo que cuenta el paso. */
+.secuencia[data-paso="5"] .aspas{animation:girar 2.4s linear infinite;transform-origin:470px 250px}
+@keyframes girar{to{transform:rotate(360deg)}}
+
+/* El termómetro: solo aparece al final, cuando hay algo que comparar */
+/* El termometro aparece dos veces y no una: caliente en el cuadro del
+   hallazgo y frio en el del cierre. Dos lecturas del mismo panel es lo que
+   hace que la ultima signifique algo; una sola no se compara con nada. */
+.secuencia .termo{opacity:0}
+.secuencia[data-paso="2"] .termo,
+.secuencia[data-paso="5"] .termo{opacity:1}
+.termo-num{
+  font-family:'JetBrains Mono',monospace;font-weight:700;font-size:26px;
+  transition:opacity .4s ease;
+}
+.termo-antes{fill:var(--amber);opacity:1}
+.termo-despues{fill:var(--teal);opacity:0}
+.secuencia[data-paso="5"] .termo-antes{opacity:0}
+.secuencia[data-paso="5"] .termo-despues{opacity:1}
+
+@media (max-width:900px){
+  .secuencia-alto{height:520vh}
+  .secuencia-cuerpo{grid-template-columns:1fr;gap:22px}
+  /* En una columna el dibujo va arriba: es lo que se está mirando */
+  .secuencia-lienzo{order:-1}
+  .maq{max-height:38vh}
+  .secuencia-rail{left:auto;right:-14px}
+  .secuencia-texto h2{margin:6px 0 14px;font-size:1.35rem}
+  .secuencia-pasos li{padding:8px 0 8px 14px}
+  .secuencia-pasos li b{font-size:.94rem}
+  /* Las seis con su texto no caben en una pantalla de teléfono */
+  .secuencia-pasos li:not(.activo){display:none}
+  .secuencia-pie{display:none}
+}
+
+/* Quien pidió que no se mueva nada ve la sección como lo que es por debajo:
+   una lista de seis pasos y el dibujo del equipo abierto. */
+@media (prefers-reduced-motion:reduce){
+  .secuencia-alto{height:auto}
+  .secuencia-fija{position:static;height:auto;padding:56px 0}
+  .capa,.secuencia-pasos li,.secuencia-pasos li span,.maq .t{transition:none}
+  .secuencia .adentro{opacity:1}
+  .secuencia .tapa,.secuencia .tornillos,.secuencia .polvo,.secuencia .pasta-vieja{opacity:0}
+  .secuencia .pasta-nueva,.secuencia .termo{opacity:1}
+  .secuencia .aspas{animation:none}
+  .secuencia-pasos li{opacity:1;border-left-color:var(--teal)}
+  .secuencia-pasos li span{max-height:none;opacity:1;margin-top:4px}
+  .secuencia-nota{display:none}
+}
+
+/* La foto del equipo abierto, ahora sola encima de la secuencia */
+.corte-foto.solo img{height:clamp(220px,30vw,380px)}
+
+/* La foto de cada tarjeta de servicio. Va debajo del icono y encima del
+   titulo: el icono dice de que va, la foto dice como se ve. */
+/* La tarjeta tiene 24px de padding lateral: la foto se sale justo esos
+   24 por cada lado para llegar a los bordes. Puesto a ojo se quedaba corta
+   por la derecha, que es donde se nota. */
+.svc-foto{
+  /* La base pone `img,svg{max-width:100%}`, que capaba este calc y dejaba la
+     foto corta justo por la derecha, que es donde se nota. */
+  max-width:none;
+  width:calc(100% + 48px);
+  margin:14px -24px 18px;
+  height:150px;
+  object-fit:cover;
+  display:block;
+}
+@media(max-width:560px){ .svc-foto{height:120px} }

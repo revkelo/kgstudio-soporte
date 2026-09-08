@@ -18,18 +18,10 @@ torre: '',                  // vacío = la página no menciona torre
 ```
 
 **Mientras el número diga `XXXX`, la página no se rompe:** cada botón cae al correo
-y cambia su propio texto ("Escríbeme por correo" en vez de "por WhatsApp"), el QR
-apunta al sitio en lugar de a un chat inexistente y la tarjeta muestra el correo.
-Un CTA que promete WhatsApp y abre un error de WhatsApp es peor que no tenerlo.
+y cambia su propio texto ("Escríbeme por correo" en vez de "por WhatsApp"). Un CTA
+que promete WhatsApp y abre un error de WhatsApp es peor que no tenerlo.
 
 El día que tengas el número, cambias esa línea y todo se reconecta solo.
-
-### Probar sin publicar
-
-Abre la página con `?editar` al final y aparece un formulario para número y torre.
-Cambia lo que ves **en ese navegador** (queda en `localStorage`), suficiente para
-imprimir tarjetas ya mismo, y te muestra la línea exacta para pegar en `datos.js`
-cuando quieras publicarlo.
 
 ## SEO local (Google Maps)
 
@@ -61,9 +53,8 @@ Pendientes que no se resuelven desde el código:
 | `index.html` | La landing completa |
 | `styles.css` | Estilos y tokens |
 | `datos.js` | Número, torre y contacto. **El único archivo con datos** |
-| `main.js` | Contacto, tarjeta de diagnóstico, tarjeta de presentación y scroll |
-| `qrcode.js` | Generador de QR (davidshimjs, MIT), servido desde aquí |
-| `img/` | Las tres fotos, descargadas. Ver abajo |
+| `main.js` | Contacto, tarjeta de diagnóstico, la secuencia y las apariciones al scroll |
+| `img/` | Las seis fotos, descargadas. Ver abajo |
 | `tarjetas.html` | Tarjetas de presentación 90×55 mm, listas para imprimir o exportar a PDF |
 | `robots.txt` | Rastreo abierto menos las tarjetas, y ruta del sitemap |
 | `sitemap.xml` | La portada, con el host canónico (`reinicia.`, no `pc.`) |
@@ -74,9 +65,12 @@ Tres, en `img/`, y cada una hace un trabajo que el texto no hacía:
 
 | Archivo | Dónde | Qué enseña |
 | --- | --- | --- |
-| `placa-desmontada.jpg` | Qué incluye | Un portátil destapado de verdad, al lado del dibujo que nombra las piezas |
+| `placa-desmontada.jpg` | Qué incluye | Un portátil destapado de verdad, justo encima de la secuencia |
 | `portatil-abierto.jpg` | Cómo funciona | Unas manos trabajando: el paso 03, que es el que el dueño del equipo no ve |
 | `torre-ventilador.jpg` | Jornada del mes | Una torre abierta, en la mitad de la tarjeta que estaba vacía |
+| `svc-portatil.jpg` | Servicios | La tarjeta de portátil |
+| `svc-torre.jpg` | Servicios | La tarjeta de torre |
+| `svc-software.jpg` | Servicios | La tarjeta de solo software |
 
 Son de [Unsplash](https://unsplash.com/license), cuya licencia permite uso
 comercial y no exige atribución.
@@ -90,6 +84,30 @@ Todas llevan `width` y `height` en el HTML para que el navegador reserve el
 hueco antes de descargarlas, y `loading="lazy"` porque ninguna está en la
 primera pantalla. El `alt` describe lo que se ve, no repite el titular de al
 lado.
+
+## La secuencia
+
+La sección **Qué le pasa a tu equipo mientras esperas** son seis cuadros que
+avanzan con la rueda del ratón: la sección mide seis pantallas de alto y lo de
+dentro se queda pegado arriba, así que scrollear no baja la página, pasa el
+cuadro.
+
+Los seis comparten el mismo chasis dibujado y lo único que cambia es qué capas
+se ven: la tapa, los tornillos, lo de adentro, el polvo, la pasta vieja, la
+pasta nueva y el termómetro. Es un solo dibujo con estados, no seis dibujos
+sueltos, que es lo que se acaba contradiciendo cuando se retoca uno.
+
+`main.js` no pinta nada: traduce lo scrolleado a un número de cuadro y lo
+escribe en `data-paso` de la sección. Todo lo que se ve lo decide el CSS a
+partir de ese atributo. Así el estado es **un** dato que se lee en el
+inspector, y las transiciones las anima el navegador en vez de un bucle en
+JavaScript.
+
+El termómetro aparece dos veces, no una: caliente en el cuadro del hallazgo y
+frío en el del cierre. Con una sola lectura no habría con qué compararla.
+
+Con `prefers-reduced-motion` la sección no se pega ni avanza: se ve como lo
+que es por debajo, una lista de seis pasos con el equipo abierto al lado.
 
 ## La tarjeta de diagnóstico
 
@@ -118,18 +136,21 @@ llega a contratarte.
 
 ## Tarjetas de presentación
 
-En la sección **Mi tarjeta** de la landing la tarjeta está dibujada a proporción
-real (90 × 55 mm) y se voltea para ver el reverso. El visitante puede descargarse
-un `.vcf` que su teléfono abre solo, o escanear el QR.
+Ya no están en la landing. Estaban en una sección propia con la tarjeta
+dibujada a proporción real, el QR y un `.vcf`, y no sumaba: el contacto ya está
+en la cabecera, en el titular y en el cierre, que es donde la gente lo busca.
 
-Todo lo de adentro se mide en `cqw` -porcentaje del ancho de la propia tarjeta-
-en vez de en píxeles, así que la misma tarjeta sirve para la miniatura del móvil
-y para la hoja de impresión sin una media query: se escala entera, como una foto,
-en lugar de descuadrarse tipo por tipo.
+Se imprimen desde `/tarjetas.html`, que es una hoja aparte con sus propios
+estilos y no depende de la landing. Revisa que el QR y el número estén bien y
+usa **Imprimir → Guardar como PDF**. Están a tamaño real (90 × 55 mm) con guía
+de corte punteada. Para litografía, pide 3 mm de sangrado.
 
-Para imprimirlas, abre `/tarjetas.html`, revisa que el QR y el número estén bien,
-y usa **Imprimir → Guardar como PDF**. Están a tamaño real con guía de corte
-punteada. Para litografía, pide 3 mm de sangrado.
+El número y la torre salen de `datos.js` y de ningún otro sitio. Antes se
+podían sobreescribir con `?editar`, que guardaba el cambio en el navegador para
+poder imprimir sin desplegar; ese editor se fue con la sección, y con él la
+mina de que un valor viejo guardado en un navegador siguiera pisando a
+`datos.js` para siempre.
+
 
 ## Ver en local
 
