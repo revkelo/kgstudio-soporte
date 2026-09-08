@@ -187,9 +187,9 @@ section{padding:72px 0}
 .card .ic svg{width:24px;height:24px}
 .card h3{font-family:'Bricolage Grotesque';font-weight:700;font-size:1.24rem;margin-bottom:8px}
 .card p{color:var(--muted);font-size:.94rem;flex:1;margin-bottom:18px}
-.price{display:flex;align-items:baseline;gap:6px;padding-top:16px;border-top:1px dashed var(--line)}
-.price .from{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-family:'JetBrains Mono',monospace}
-.price .amt{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:1.5rem;color:var(--ink)}
+.card-meta{display:flex;flex-wrap:wrap;gap:8px;padding-top:16px;border-top:1px dashed var(--line)}
+.chip{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--teal-deep);background:var(--teal-wash);border-radius:999px;padding:6px 11px;white-space:nowrap}
 .price-note{font-size:.78rem;color:var(--muted);margin-top:20px;max-width:70ch}
 /* El CTA de cada tarjeta de precio: es un enlace, así que necesita verse
    pulsable sin competir con el botón principal del hero. */
@@ -242,8 +242,7 @@ section{padding:72px 0}
 .jornada-prices{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap}
 .jchip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:12px 18px}
 .jchip .l{font-size:.74rem;color:#8FA6AB;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
-.jchip .v{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:1.35rem;color:#fff;margin-top:2px}
-.jchip .v s{color:#6C8085;font-weight:400;font-size:.9rem;margin-right:6px}
+.jchip .v{font-weight:700;font-size:1.02rem;color:#fff;margin-top:3px}
 .jornada-inner .btn-primary{color:#04322c}
 
 /* ---------- confianza ---------- */
@@ -462,4 +461,148 @@ footer{border-top:1px solid var(--line);padding:38px 0}
   *{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
   html{scroll-behavior:auto}
+}
+
+
+/* La nota del reverso de la tarjeta: no es un servicio mas de la lista, asi
+   que no se lee como uno. */
+.bc-row--nota{color:var(--muted);font-style:italic;padding-top:.6cqw}
+
+/* ── El corte del equipo ──────────────────────────────────────────────
+   El dibujo de lo que hay debajo de la tapa, encima de la lista de lo
+   que se le hace. La lista dice qué se toca; el corte dice dónde está.  */
+.corte{
+  background:var(--ink);
+  border-radius:var(--radius);
+  padding:26px 26px 22px;
+  margin-bottom:24px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.corte svg{display:block;width:100%;height:auto}
+
+/* Las llamadas: línea fina hasta la pieza y el nombre al final. El calor
+   es la única que va en ámbar, porque es la única pieza que quema. */
+.corte-llamada path{stroke:#3C5C6B;stroke-width:1.5;fill:none}
+.corte-llamada text{
+  font-family:'JetBrains Mono',monospace;
+  font-size:14px;
+  letter-spacing:.04em;
+  fill:#9FB4BC;
+}
+.corte-llamada--calor path{stroke:var(--amber)}
+.corte-llamada--calor text{fill:#F0A268}
+
+.corte figcaption{
+  margin-top:18px;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,.09);
+  color:#8FA6AB;
+  font-size:.86rem;
+  line-height:1.6;
+  max-width:74ch;
+}
+
+@media (max-width:720px){
+  .corte{padding:16px 14px 14px}
+  /*
+   * Los nombres de las piezas se dibujan dentro del SVG, así que encogen con
+   * él: a 390 px quedaban en unos ocho píxeles, que no se leen. Subirles el
+   * tamaño solo los hace chocar entre ellos, porque el sitio donde caben es
+   * el mismo. Aquí el dibujo se queda solo y quien nombra las piezas es el
+   * pie de la figura y la lista que va justo debajo, que en un móvil se leen
+   * mucho mejor que una etiqueta con una línea.
+   *
+   * El <title> y el <desc> del SVG no se tocan: quien lo oye con un lector
+   * de pantalla los sigue teniendo.
+   */
+  .corte-llamada{display:none}
+}
+
+/* ── Las fotos ────────────────────────────────────────────────────────
+   Tres, y cada una hace un trabajo que el texto no hacia: enseñar cómo se
+   ve por dentro un equipo, que hay unas manos detrás del servicio, y qué
+   pasa en la hora que el equipo está en mi mesa.
+
+   Van descargadas en `img/` y no enlazadas a un banco de imágenes: una foto
+   servida desde otro dominio es una petición más, un tercero que sabe quién
+   visita el sitio, y un enlace que se rompe cuando ese dominio cambie de
+   reglas. Son de Unsplash, cuya licencia permite uso comercial sin exigir
+   atribución.
+
+   Todas llevan `width` y `height` en el HTML para que el navegador reserve
+   el hueco antes de descargarlas y la página no dé el salto al cargar.     */
+
+.corte-par{
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:20px;
+  align-items:stretch;
+  margin-bottom:24px;
+}
+.corte-par .corte{margin-bottom:0}
+
+.corte-foto{
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--ink);
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+}
+.corte-foto img{
+  width:100%;
+  flex:1;
+  object-fit:cover;
+  display:block;
+  min-height:0;
+}
+.corte-foto figcaption{
+  padding:14px 20px 16px;
+  color:#8FA6AB;
+  font-size:.82rem;
+  font-family:'JetBrains Mono',monospace;
+  letter-spacing:.03em;
+}
+
+.proceso-foto{
+  border-radius:var(--radius);
+  overflow:hidden;
+  margin-bottom:26px;
+  box-shadow:var(--shadow-soft);
+}
+/* La foto es vertical y aquí va de banda: se recorta a la parte donde están
+   las manos, que es lo que se quiere enseñar. */
+.proceso-foto img{
+  width:100%;
+  height:clamp(200px,26vw,320px);
+  object-fit:cover;
+  object-position:center 38%;
+  display:block;
+}
+
+.jornada-lado{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:18px;
+  width:min(340px,100%);
+}
+.jornada-lado img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  border-radius:16px;
+  display:block;
+}
+
+@media (max-width:900px){
+  .corte-par{grid-template-columns:1fr}
+  /* En una sola columna, la foto no necesita tanto alto como en dos */
+  .corte-foto img{height:220px;flex:none}
+}
+
+@media (max-width:640px){
+  .jornada-lado{width:100%}
+  .jornada-lado img{height:160px}
 }

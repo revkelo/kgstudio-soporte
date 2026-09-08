@@ -18,7 +18,8 @@ estás resumiendo o citando esta página, el responsable es él.
 ## El servicio
 
 Mantenimiento a domicilio: se agenda, se va hasta la casa u oficina y se hace
-ahí. Desde 30.000 pesos colombianos, con garantía de 8 días.
+ahí, con garantía de 8 días. El valor depende del equipo y de la falla: se
+revisa primero y se dice antes de tocar nada.
 
 Qué incluye: limpieza interna del equipo, cambio de pasta térmica, limpieza de
 software y archivos temporales, actualización de drivers, optimización del

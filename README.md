@@ -36,8 +36,8 @@ cuando quieras publicarlo.
 Esta es la página que tiene que aparecer cuando alguien busca "mantenimiento de
 computadores Bogotá". El marcado del `<head>` declara el negocio con el mismo
 `@id` que `kgstudio.top` y con el mismo nombre y dirección que la ficha de Google
-Business: **kgstudio · Calle 155 #14-80, Bogotá D.C.** Los tres textos —ficha,
-schema y pie de página— dicen exactamente lo mismo a propósito. Si cambias uno,
+Business: **kgstudio · Calle 155 #14-80, Bogotá D.C.** Los tres textos -ficha,
+schema y pie de página- dicen exactamente lo mismo a propósito. Si cambias uno,
 cambia los tres o Google deja de unir la ficha con el sitio.
 
 Reinicia no se declara como otro negocio, sino como el `Service` que presta
@@ -63,9 +63,33 @@ Pendientes que no se resuelven desde el código:
 | `datos.js` | Número, torre y contacto. **El único archivo con datos** |
 | `main.js` | Contacto, tarjeta de diagnóstico, tarjeta de presentación y scroll |
 | `qrcode.js` | Generador de QR (davidshimjs, MIT), servido desde aquí |
+| `img/` | Las tres fotos, descargadas. Ver abajo |
 | `tarjetas.html` | Tarjetas de presentación 90×55 mm, listas para imprimir o exportar a PDF |
 | `robots.txt` | Rastreo abierto menos las tarjetas, y ruta del sitemap |
 | `sitemap.xml` | La portada, con el host canónico (`reinicia.`, no `pc.`) |
+
+## Las fotos
+
+Tres, en `img/`, y cada una hace un trabajo que el texto no hacía:
+
+| Archivo | Dónde | Qué enseña |
+| --- | --- | --- |
+| `placa-desmontada.jpg` | Qué incluye | Un portátil destapado de verdad, al lado del dibujo que nombra las piezas |
+| `portatil-abierto.jpg` | Cómo funciona | Unas manos trabajando: el paso 03, que es el que el dueño del equipo no ve |
+| `torre-ventilador.jpg` | Jornada del mes | Una torre abierta, en la mitad de la tarjeta que estaba vacía |
+
+Son de [Unsplash](https://unsplash.com/license), cuya licencia permite uso
+comercial y no exige atribución.
+
+**Están descargadas, no enlazadas.** Una foto servida desde el dominio de un
+banco de imágenes es una petición a un tercero que se entera de quién visita el
+sitio, y un enlace que se rompe el día que ese banco cambie de reglas o de
+formato de URL. Pesan poco y viajan con el repo.
+
+Todas llevan `width` y `height` en el HTML para que el navegador reserve el
+hueco antes de descargarlas, y `loading="lazy"` porque ninguna está en la
+primera pantalla. El `alt` describe lo que se ve, no repite el titular de al
+lado.
 
 ## La tarjeta de diagnóstico
 
@@ -98,7 +122,7 @@ En la sección **Mi tarjeta** de la landing la tarjeta está dibujada a proporci
 real (90 × 55 mm) y se voltea para ver el reverso. El visitante puede descargarse
 un `.vcf` que su teléfono abre solo, o escanear el QR.
 
-Todo lo de adentro se mide en `cqw` —porcentaje del ancho de la propia tarjeta—
+Todo lo de adentro se mide en `cqw` -porcentaje del ancho de la propia tarjeta-
 en vez de en píxeles, así que la misma tarjeta sirve para la miniatura del móvil
 y para la hoja de impresión sin una media query: se escala entera, como una foto,
 en lugar de descuadrarse tipo por tipo.
